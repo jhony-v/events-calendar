@@ -1,6 +1,6 @@
 from api.routes import user
 
-routers = [
+api = [
     {
         'router': user.userRoute,
         'path': 'users'
