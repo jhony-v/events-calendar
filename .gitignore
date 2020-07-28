@@ -2,3 +2,4 @@ env/lib/
 env/Scripts/
 env/pyvenv.cfg
 **/__pycache__/
+.env

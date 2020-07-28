@@ -1,11 +1,10 @@
 from flask import Flask
 from flask_cors import CORS
-from utils import REGISTER_PATHS
-from api import api as apiRouters
+from config import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
 
-class Server:
-    def initialize(self):
-        app = Flask(__name__)
-        CORS(app)
-        REGISTER_PATHS(app,apiRouters,'/api/v1/')
-        return app
+def serverApp():
+    app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
+    CORS(app)
+    return app

@@ -1,4 +1,0 @@
-Flask
-Flask-Cors
-flask-migrate
-flask-SQLAlchemy

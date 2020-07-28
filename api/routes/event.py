@@ -2,7 +2,6 @@ from flask import Blueprint, jsonify
 
 eventRoute = Blueprint('event', __name__)
 
-
 @eventRoute.route('/<int:idEvent>', methods=['GET'])
 def getAllEventsById(idEvent):
     return jsonify([])
