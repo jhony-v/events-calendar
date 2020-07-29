@@ -3,3 +3,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 a { text-decoration: none; color: inherit; }
 button, textarea, input, select { outline: none; border-width: 0;}
 *{ font-family: Roboto, Arial, Helvetica, sans-serif; box-sizing: border-box; }
+.flex--align-center {
+    align-items: center;
+}

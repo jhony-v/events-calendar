@@ -3,26 +3,27 @@
     <img
       src="https://cdn.pixabay.com/photo/2016/04/21/01/31/handsome-1342457__340.jpg"
       alt=""
+      class="profile-panel__image"
     />
   </div>
   <div class="profile-panel__col">
     <div class="profile-panel__container">
       <div class="profile-panel__wrapper-header">
-        <h1 class="profile__text--dark--medium">Mark_Instirep10 🎉</h1>
-        <p class="profile__text--smooth">Mark Instired Boriel</p>
+        <h1 class="profile__text--dark--medium">Mark_InstirepAbelardo10 🎉</h1>
+        <p class="profile__text--smooth child">Mark Instired Boriel</p>
       </div>
-      <div class="profile-panel__wrapper-body">
-        <div class="profile-panel--flex">
+      <div class="profile-panel__wrapper-body profile-panel--flex">
+        <div class="profile-panel--flex flex-align-center">
           <div class="profile__text--dark--medium">2325</div>
-          <div class="profile__text--smooth">Passed</div>
+          <div class="profile__text--smooth child">Passed</div>
         </div>
-        <div class="profile-panel--flex">
+        <div class="profile-panel--flex flex-align-center">
           <div class="profile__text--dark--medium">1533</div>
-          <div class="profile__text--smooth">Tags</div>
+          <div class="profile__text--smooth child">Tags</div>
         </div>
-        <div class="profile-panel--flex">
+        <div class="profile-panel--flex flex-align-center">
           <div class="profile__text--dark--medium">761</div>
-          <div class="profile__text--smooth">Events</div>
+          <div class="profile__text--smooth child">Events</div>
         </div>
       </div>
       <div class="profile-panel__wrapper-footer">
@@ -35,3 +36,46 @@
     </div>
   </div>
 </div>
+<style>
+    .profile-panel--flex {
+        display: flex;
+    }
+    .profile-panel {
+        background-color: var(--light);
+        padding: 2em;
+        margin-top: 1in;
+    }
+    .profile-panel__image {
+        --size : 200px;
+        width : var(--size);
+        height : var(--size);
+        border-radius: 100%;
+        object-fit: cover;
+    }
+    .profile__text--dark--medium {
+        color: var(--dark);
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    .profile__text--smooth {
+        color: var(--light-smooth);
+        font-size: .9em;
+        line-height: 22px;
+    }
+    .profile-panel__container {
+        padding-left: 2em;
+    }
+    .profile-panel__wrapper-header > .child:last-child {
+        margin-top: 10px;
+    }
+    .profile-panel__wrapper-body {
+        margin: 2em 0;
+    }
+    .profile-panel__wrapper-body > div > .child:last-child {
+        margin-right: 40px;
+        margin-left: 5px;
+    }
+    .profile-panel__wrapper-footer {
+        max-width: 70%;
+    }
+</style>
