@@ -1,0 +1,35 @@
+<div class="user-avatar-options">
+    <div class="options-circle options-circle__less">-</div>
+    <div class="options-circle">
+        <img src="https://cdn.pixabay.com/photo/2016/04/21/01/31/handsome-1342457__340.jpg" alt="" class="options-circle__image"/>
+    </div>
+    <div class="options-circle options-circle__plus">+</div>
+</div>
+<style>
+    .user-avatar-options {
+        display: flex;
+    }
+    .options-circle {
+        --size: 30px;
+        width: var(--size);
+        height : var(--size);
+        border-radius: 100%;
+        margin: auto 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+
+    .options-circle__image {
+        width: var(--size);
+        height: var(--size);
+        object-fit: cover;
+        border-radius: 100%;
+    }
+    .options-circle__less { background-color: var(--primary);   }
+    .options-circle__plus { background-color: var(--secondary);   }
+
+</style>
