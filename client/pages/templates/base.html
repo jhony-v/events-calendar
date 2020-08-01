@@ -7,12 +7,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet"/>
     <link rel="stylesheet" href="/css/variables.css"/>
     <link rel="stylesheet" href="/css/reset.css"/>
+    <link rel="stylesheet" href="/css/layoutHeader.css"/>
+    <script src="/lib/vue.min.js"></script>
+    <script src="/lib/vuex.js"></script>
     {% block ceo %} {% endblock ceo %}
     {% block assets %} {% endblock assets %}
   </head>
-  <body>
-    {% block header %} {% endblock header %}
-    {% block body %} {% endblock body %}
-    {% block footer %} {% endblock footer %}
+  <body> 
+    <div id="app">
+      {% include "layouts/navigator_header.html" %}
+      {% block header %} {% endblock header %}
+      {% block body %} {% endblock body %}
+      {% block footer %} {% endblock footer %}
+    </div>
   </body>
 </html>

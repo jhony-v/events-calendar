@@ -1,0 +1,46 @@
+.navigator-header {
+  background: var(--light) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.02);
+  padding: 0 2em;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigator-list-item {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.navigator-item > .item-link {
+  color: var(--dark);
+  border-bottom: 3px solid transparent;
+  display: block;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+}
+.navigator-item > .item-link .material-icons {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+.navigator-item > .item-link--active {
+  border-bottom-color: var(--primary);
+  font-weight: 900;
+  animation : color-bottom-link .8s 1;
+}
+
+@keyframes color-bottom-link {
+  from {
+    border-bottom-color: transparent;
+  }
+}
+

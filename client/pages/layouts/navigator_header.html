@@ -1,57 +1,9 @@
 <div class="navigator-header">
   <ul class="navigator-list-item">
-    <div class="navigator-item">
-      <a href="/" class="item-link"> <i class="material-icons">home</i> Home</a>
-    </div>
-    <div class="navigator-item">
-      <a href="/" class="item-link"> <i class="material-icons">people</i> Friends Tag</a>
-    </div>
-    <div class="navigator-item"><a href="/" class="item-link"><i class="material-icons">calendar_today</i>  Events</a></div>
-    <div class="navigator-item">
-      <a href="" class="item-link item-link--active"><i class="material-icons">settings</i> Configuration</a>
-    </div>
+    <link-navigator link="/" icon="home" text="Home"></link-navigator>
+    <link-navigator link="/tags" icon="people" text="Friends tag"></link-navigator>
+    <link-navigator link="/events" icon="calendar_today" text="Events"></link-navigator>
+    <link-navigator link="/profile" icon="people" text="My profile"></link-navigator>    
   </ul>
   {% include "components/user_avatar_options.html" %}
 </div>
-<style>
-  .navigator-header {
-    background: var(--light) !important;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.02);
-    padding: 0 2em;
-    font-size: 0.9em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .navigator-list-item {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    width: 50%;
-    margin: auto;
-  }
-  .navigator-item {
-  }
-  .navigator-item > .item-link {
-    color: var(--dark);
-    border-bottom: 3px solid transparent;
-    display: block;
-    padding: 30px 0;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-  }
-  .navigator-item > .item-link .material-icons{
-    font-size: 1.5em;
-    margin-right: 10px;
-  }
-  .navigator-item > .item-link--active {
-    border-bottom-color: var(--primary);
-    font-weight: 900;
-  }
-</style>
