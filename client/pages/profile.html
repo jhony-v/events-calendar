@@ -1,6 +1,8 @@
 {% extends "templates/base.html" %}
 {% block assets %}
+    <link rel="stylesheet" href="/css/profile.css">
     <script type="module" defer src="/js/profile.js"></script>
 {% endblock assets %}
 {% block body %}
+    {% include "layouts/profile_panel.html" %}
 {% endblock body %}

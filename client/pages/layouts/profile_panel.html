@@ -1,10 +1,6 @@
 <div class="profile-panel profile-panel--flex">
   <div class="profile-panel__col">
-    <img
-      src="https://cdn.pixabay.com/photo/2016/04/21/01/31/handsome-1342457__340.jpg"
-      alt=""
-      class="profile-panel__image"
-    />
+    <profile-avatar image="https://cdn.pixabay.com/photo/2016/04/21/01/31/handsome-1342457__340.jpg"></profile-avatar>
   </div>
   <div class="profile-panel__col">
     <div class="profile-panel__container">
@@ -13,26 +9,31 @@
         <p class="profile__text--smooth child">Mark Instired Boriel</p>
       </div>
       <div class="profile-panel__wrapper-body profile-panel--flex">
-        <div class="profile-panel--flex flex-align-center">
-          <div class="profile__text--dark--medium">2325</div>
-          <div class="profile__text--smooth child">Passed</div>
-        </div>
-        <div class="profile-panel--flex flex-align-center">
-          <div class="profile__text--dark--medium">1533</div>
-          <div class="profile__text--smooth child">Tags</div>
-        </div>
-        <div class="profile-panel--flex flex-align-center">
-          <div class="profile__text--dark--medium">761</div>
-          <div class="profile__text--smooth child">Events</div>
-        </div>
+        <profile-wrapper-puntuation points="2325" text="Passed"></profile-wrapper-puntuation>
+        <profile-wrapper-puntuation points="1255" text="Tags"></profile-wrapper-puntuation>
+        <profile-wrapper-puntuation points="14" text="Events"></profile-wrapper-puntuation>
       </div>
       <div class="profile-panel__wrapper-footer">
-        <p class="profile__text--smooth">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-          laudantium at! Praesentium ab unde debitis 💙💙💙 reprehenderit ipsam aut
-          inventore quod earum eum optio totam, sed aliquam error beatae quia a.
-        </p>
+        <profile-description-smooth text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
+        laudantium at! Praesentium ab unde debitis 💙💙💙 reprehenderit ipsam aut
+        inventore quod earum eum optio totam, sed aliquam error beatae quia a."></profile-description-smooth>
       </div>
     </div>
   </div>
+</div>
+<div class="tabs-panel-controller">
+  <div class="tabs-panel__header">
+    <profile-tab-controller 
+    v-for="(item,key) in allTabs" 
+    :key="key"
+    :text="item.name"
+    :active="item.key == currentTabKey"
+    @onclick="selectCurrentTab(item)" ></profile-tab-controller>
+  </div>
+  <div class="tabs-panel__body">
+    <template v-if="currentTabKey == 1">
+    </template>
+    <template v-else-if="currentTabKey == 2">
+    </template>
+</div>
 </div>

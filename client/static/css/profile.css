@@ -1,0 +1,24 @@
+@import "./profilePanel.css";
+
+.tabs-panel-controller {
+    padding: 0 2em;
+}
+.tabs-panel__header {
+    background: var(--light);
+}
+
+.profile-tab-controller {
+    color : gray;
+    padding:1em 2em;
+    display: inline-block;
+    border-bottom:3px solid transparent;
+    transition:border-bottom-color .3s;
+    user-select: none;
+    cursor: pointer;
+}
+
+.profile-tab-controller--active {   
+    border-bottom-color: var(--primary) !important;
+    font-weight: bold;
+    color: var(--dark);
+}
