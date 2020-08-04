@@ -1,5 +1,6 @@
-@import "./profilePanel.css";
-@import "./components.css";
+@import "./components/profilePanel";
+@import "./components/cardDatetime";
+@import "./layouts/layoutHeader";
 
 .tabs-panel-controller {
     padding: 0 2em;

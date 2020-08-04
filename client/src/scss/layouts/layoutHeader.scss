@@ -35,7 +35,7 @@
 .navigator-item > .item-link--active {
   border-bottom-color: var(--primary);
   font-weight: 900;
-  animation : color-bottom-link .8s 1;
+  animation: color-bottom-link 0.8s 1;
 }
 
 @keyframes color-bottom-link {
@@ -43,4 +43,3 @@
     border-bottom-color: transparent;
   }
 }
-
