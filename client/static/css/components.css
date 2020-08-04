@@ -1,0 +1,48 @@
+.card-datetime {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 10px;
+  background: white;
+}
+
+.card-datetime__date {
+  display: flex;
+  align-items: center;
+  padding: 1em 2em 1em;
+  margin-top: 2em;
+  margin-bottom: 4em;
+  border-left: 4px solid var(--primary);
+}
+
+.date__day--number {
+  font-size: 4em;
+}
+
+.date__day--text {
+  margin-left: 10px;
+}
+.date__day--text .month {
+  font-weight: bold;
+}
+
+.date__day--text .year {
+  color: var(--light-smooth);
+  margin-top: 6px;
+  font-size: 0.9em;
+}
+
+.card-datetime__subject {
+    padding: 1em 2em;
+}
+
+.card-datetime__subject .description {
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.card-datetime__subject .time {
+  color: var(--light-smooth);
+  margin-top: 10px;
+  font-size: 12px;
+}

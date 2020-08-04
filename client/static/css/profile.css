@@ -1,4 +1,5 @@
 @import "./profilePanel.css";
+@import "./components.css";
 
 .tabs-panel-controller {
     padding: 0 2em;
