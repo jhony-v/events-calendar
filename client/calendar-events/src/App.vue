@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <theme-provider :theme="theme">
-      <router-view />
-    </theme-provider>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -26,18 +24,4 @@ input {
   outline: none;
   border-width: 0;
 }
-
 </style>
-<script lang="ts">
-import Vue from "vue";
-import { ThemeProvider } from "vue-styled-components";
-import light from "./themes/light";
-export default Vue.extend({
-  data: () => ({
-    theme: light,
-  }),
-  components: {
-    "theme-provider": ThemeProvider,
-  },
-});
-</script>

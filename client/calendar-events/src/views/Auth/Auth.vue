@@ -1,29 +1,40 @@
 <template>
   <div class="auth">
     <div class="auth-form">
-        <div class="auth-form__title--master auth-form__title">CALENDAR <i class="material-icons">emoji_events</i> EVENTS</div>
-        <h3 class="auth-form__title">LOGIN</h3>
-        <input-field label="Username or email" :style="{marginBottom:'2em'}" ></input-field>
-        <input-field label="Type your password" :style="{marginBottom:'2em'}" type="password"></input-field>
+        <auth-form-title></auth-form-title>
+        <input-field label="Username or email" class="input" @oninput="username = $event"></input-field>
+        <input-field label="Type your password" class="input" @oninput="password = $event"></input-field>
         <router-link class="auth-form__forword" to="/">Forworg password?</router-link>
-        <div class="auth-form__button">Sign In</div>
-        <div class="auth-form__options">
-            <div class="auth-form__google"><img src="https://image.flaticon.com/teams/slug/google.jpg" width="30px" />  Sign in with Google</div>
-        </div>
+        <div class="auth-form__button" @click="onAuthSignIn">Sign In</div>
+        <auth-other-options></auth-other-options>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
+import { State, Action } from "vuex-class"; 
 import InputField from "@/components/styled/InputField.vue";
+import AuthOtherOptionsAuthVue from './AuthOtherOptionsAuth.vue';
+import AuthFormTitleVue from './AuthFormTitle.vue';
+import { TypesStore } from "@/store/@types"
 
 @Component({
   components: {
     "input-field": InputField,
+    "auth-other-options" : AuthOtherOptionsAuthVue,
+    "auth-form-title" : AuthFormTitleVue
   },
 })
-export default class Auth extends Vue {}
+export default class Auth extends Vue {
+    private username !: string;
+    private password !: string;
+
+    @Action("authSignIn",{namespace:"auth"}) authSignIn !: (e : TypesStore.AuthLoginVerifiy) => void;
+    private onAuthSignIn() : void {
+        this.authSignIn({username:this.username,password:this.password});
+    }
+}
 </script>
 
 <style lang="scss" scoped>
@@ -46,20 +57,8 @@ export default class Auth extends Vue {}
     padding: 3em;
     margin: auto;
     width: 420px;
-    &__title {
-        color: rgb(90,90,90);
-        font-size: 1.2em;
-        @extend %auth-form-block;
-        &--master {
-            margin-bottom: 3em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            .material-icons {
-                color: rgb(30, 190, 230);
-                font-size: 2em;
-            }
-        }
+    .input {
+        margin-bottom: 2em;
     }
     &__forword {
         color: rgb(30, 190, 230);
@@ -70,21 +69,6 @@ export default class Auth extends Vue {}
         color: rgb(30, 190, 230);
         font-size: 1.2em;
         @extend %auth-form-block;
-    }
-    &__options {
-        background: rgba(0,0,0,.03);
-        padding: 2em;
-        margin: -3em;
-        margin-top: 2em;
-        text-align: center;
-        #{$self}__google {
-            display: inline-flex;
-            align-items: center;
-            font-weight: bold;
-            font-size: 14px;
-            color: rgb(90,90,90);
-            cursor: pointer;
-        }
     }
 }
 </style>

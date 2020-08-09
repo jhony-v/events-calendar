@@ -1,16 +1,18 @@
 <template>
   <div class="field">
     <label class="field__label">{{label}}</label>
-    <input class="field__input" spellcheck="false" />
+    <input class="field__input" spellcheck="false" :ref="input" @input="onChangeInput" />
   </div>
 </template>
 
 <script>
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Emit, Ref } from "vue-property-decorator";
 
 @Component({})
 export default class InputField extends Vue {
   @Prop() label;
+  @Ref() input;
+  onChangeInput = (e) => this.$emit("oninput",e.target.value);
 }
 </script>
 
