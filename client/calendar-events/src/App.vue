@@ -24,7 +24,9 @@ summary,
 details,
 input {
   outline: none;
+  border-width: 0;
 }
+
 </style>
 <script lang="ts">
 import Vue from "vue";

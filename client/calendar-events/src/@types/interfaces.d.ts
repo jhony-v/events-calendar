@@ -5,4 +5,8 @@ export namespace interfaces {
     readonly secondary: string;
     readonly layout: string;
   }
+
+  export enum MutationTypesAuth {
+    SET_LOADING = "SET_LOADING",
+  }
 }
