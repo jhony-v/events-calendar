@@ -5,6 +5,7 @@
 </template>
 
 <style lang="scss">
+@import "./App";
 * {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;

@@ -3,11 +3,17 @@ import VueRouter, { RouteConfig } from "vue-router";
 
 Vue.use(VueRouter);
 
+
+const Home = () => import("../views/Home/Home.vue");
+
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
     component: () => import("../views/Home/Home.vue"),
+    meta : {
+      requiredAuth : true
+    }
   },
   {
     path: "/about/:id",

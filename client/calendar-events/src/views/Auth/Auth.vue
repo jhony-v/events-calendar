@@ -5,7 +5,7 @@
         <input-field label="Username or email" class="input" @oninput="username = $event"></input-field>
         <input-field label="Type your password" class="input" @oninput="password = $event"></input-field>
         <router-link class="auth-form__forword" to="/">Forworg password?</router-link>
-        <div class="auth-form__button" @click="onAuthSignIn">Sign In</div>
+        <div class="auth-form__button" tabindex="0" @keyup.enter="onAuthSignIn" @click="onAuthSignIn">Sign In</div>
         <auth-other-options></auth-other-options>
     </div>
   </div>
@@ -29,7 +29,6 @@ import { TypesStore } from "@/store/@types"
 export default class Auth extends Vue {
     private username !: string;
     private password !: string;
-
     @Action("authSignIn",{namespace:"auth"}) authSignIn !: (e : TypesStore.AuthLoginVerifiy) => void;
     private onAuthSignIn() : void {
         this.authSignIn({username:this.username,password:this.password});
@@ -43,6 +42,7 @@ export default class Auth extends Vue {
     display: block;
     font-weight: bold;
     margin-bottom: 2em;
+    outline: none;
 }
 
 .auth {
@@ -61,14 +61,21 @@ export default class Auth extends Vue {
         margin-bottom: 2em;
     }
     &__forword {
-        color: rgb(30, 190, 230);
+        color: var(--color-primary);
         font-size: 13px;
         @extend %auth-form-block;
     }
     &__button {
-        color: rgb(30, 190, 230);
+        color: var(--color-primary);
         font-size: 1.2em;
+        padding: 10px;
         @extend %auth-form-block;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        transition: border-color .3s;
+        &:focus {
+            border-color: currentColor;
+        }
     }
 }
 </style>
