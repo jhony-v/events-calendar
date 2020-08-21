@@ -36,7 +36,7 @@ export default class Error404 extends Vue {}
     color: var(--color-primary-dark);
     text-shadow: 0 10px 20px rgba(0,0,0,.25);
     &--message {
-        color: var(--color-primary-dark-medium);
+        color: var(--color-primary);
         font-weight: bold;
         font-size: 1.8em;
     }
