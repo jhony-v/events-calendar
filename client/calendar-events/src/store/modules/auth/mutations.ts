@@ -3,8 +3,7 @@ import { MutationTree } from 'vuex';
 
 const mutations: MutationTree<TypesStore.AuthState> = {
     [TypesStore.AuthActions.SIGN_IN](state, payload : TypesStore.AuthLoginVerifiy) {
-      if(payload.username === "mark2" && payload.username === "mark2"){
-        console.log("ok");
+      if(payload.username === "mark2" && payload.password === "mark2"){
       }
       else {
         console.log("mal",payload);
