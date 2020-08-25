@@ -1,4 +1,4 @@
-import { TypesStore } from '@/store/@types';
+import { TypesStore } from './auth.types';
 import { MutationTree } from 'vuex';
 
 const mutations: MutationTree<TypesStore.AuthState> = {
@@ -9,6 +9,9 @@ const mutations: MutationTree<TypesStore.AuthState> = {
         console.log("mal",payload);
       }
     },
+    [TypesStore.AuthActions.ASK_RECOVER_PASSWORD](state,payload: TypesStore.AuthLoginAskPassword) {
+
+    }
 };
 
 export default mutations;

@@ -17,7 +17,7 @@ import { State, Action } from "vuex-class";
 import InputField from "@/components/styled/InputField.vue";
 import AuthOtherOptionsAuthVue from './AuthOtherOptionsAuth.vue';
 import AuthFormTitleVue from './AuthFormTitle.vue';
-import { TypesStore } from "@/store/@types"
+import { TypesStore } from "../../store/modules/auth/auth.types";
 
 @Component({
   components: {
