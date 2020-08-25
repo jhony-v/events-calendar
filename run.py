@@ -7,7 +7,5 @@ db.create_all()
 
 if __name__ == "__main__":
     import api
-    import client
     api.apiRoutes(app)
-    client.clientRoutes(app)
     app.run(debug=True)

@@ -4,3 +4,4 @@ flask-migrate
 flask-SQLAlchemy
 python-dotenv
 pymysql
+pyjwt
