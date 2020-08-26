@@ -14,9 +14,8 @@
 }
 
 // change of theme system default
-$theme : light;
 
-@media (prefers-color-scheme : $theme) {
+@media (prefers-color-scheme : light) {
   :root {
     --color-bg-primary : rgb(20,20,20);
     --color-text-neutral-darker : rgb(230,230,230);

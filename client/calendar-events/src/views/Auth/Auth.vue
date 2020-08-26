@@ -15,15 +15,15 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { State, Action } from "vuex-class"; 
 import InputField from "@/components/styled/InputField.vue";
-import AuthOtherOptionsAuthVue from './AuthOtherOptionsAuth.vue';
-import AuthFormTitleVue from './AuthFormTitle.vue';
+import AuthOtherOptionsAuth from './AuthOtherOptionsAuth.vue';
+import AuthFormTitle from './AuthFormTitle.vue';
 import { TypesStore } from "@/store/modules/auth/@types/auth-types";
 
 @Component({
   components: {
-    "input-field": InputField,
-    "auth-other-options" : AuthOtherOptionsAuthVue,
-    "auth-form-title" : AuthFormTitleVue
+    InputField,
+    AuthOtherOptionsAuth,
+    AuthFormTitle
   },
 })
 export default class Auth extends Vue {

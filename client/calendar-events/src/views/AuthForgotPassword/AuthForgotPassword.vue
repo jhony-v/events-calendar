@@ -28,7 +28,7 @@ import InputField from "@/components/styled/InputField.vue";
 
 @Component({
   components: {
-    "input-field": InputField,
+    InputField,
   },
 })
 export default class AuthForgotPassword extends Vue {}
