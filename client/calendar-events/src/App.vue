@@ -25,4 +25,8 @@ input {
   outline: none;
   border-width: 0;
 }
+
+body {
+  background: var(--color-bg-primary);
+}
 </style>

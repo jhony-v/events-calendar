@@ -1,5 +1,5 @@
 import { ActionTree } from "vuex";
-import { TypesStore } from './auth.types';
+import { TypesStore } from './@types/auth-types';
 
 const actions: ActionTree<TypesStore.AuthState, TypesStore.RootState> = {
   authSignIn({ commit }, payload: TypesStore.AuthActions) {

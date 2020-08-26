@@ -24,19 +24,20 @@ export default class InputField extends Vue {
   margin: auto;
 
   &__input {
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid var(--color-border-neutral);
     border-radius: 20px;
     padding: 10px;
     text-align: center;
     font-weight: bold;
     font-size: 13px;
-    color: rgb(60,60,60);
+    background: none;
+    color: var(--color-text-neutral-darker);
   }
   &__label {
     text-align: center;
     font-size: 14px;
-    color: rgb(187, 187, 187);
-    text-shadow: 0 5px 10px rgba(0,0,0,.1);
+    color: var(--color-text-neutral);
+    text-shadow: 0 5px 10px var(--color-border-neutral);
     margin-bottom: 10px;
     font-weight: bold;
   }

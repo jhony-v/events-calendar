@@ -1,5 +1,5 @@
-import { TypesStore } from './auth.types';
 import { MutationTree } from 'vuex';
+import { TypesStore } from './@types/auth-types';
 
 const mutations: MutationTree<TypesStore.AuthState> = {
     [TypesStore.AuthActions.SIGN_IN](state, payload : TypesStore.AuthLoginVerifiy) {

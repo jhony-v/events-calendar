@@ -17,7 +17,7 @@ import { State, Action } from "vuex-class";
 import InputField from "@/components/styled/InputField.vue";
 import AuthOtherOptionsAuthVue from './AuthOtherOptionsAuth.vue';
 import AuthFormTitleVue from './AuthFormTitle.vue';
-import { TypesStore } from "../../store/modules/auth/auth.types";
+import { TypesStore } from "@/store/modules/auth/@types/auth-types";
 
 @Component({
   components: {
@@ -52,7 +52,7 @@ export default class Auth extends Vue {
 }
 .auth-form {
     $self : &;
-    box-shadow: 0 10px 20px rgba(0,0,0,.1);
+    box-shadow: 0 10px 20px var(--color-border-neutral);
     border-radius: 10px;
     padding: 3em;
     margin: auto;

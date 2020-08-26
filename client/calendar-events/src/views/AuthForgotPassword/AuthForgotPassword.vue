@@ -39,7 +39,7 @@ export default class AuthForgotPassword extends Vue {}
   &--card {
     margin: 1in auto;
     width: 400px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px var(--color-border-neutral);
     border-radius: 10px;
     padding: 2em;
   }
@@ -50,10 +50,10 @@ export default class AuthForgotPassword extends Vue {}
     margin: auto;
     font-size: 1.6rem;
     margin-bottom: 15px;
-    color: rgb(61, 61, 61);
+    color: var(--color-text-neutral-darker);
   }
   &__message {
-    color: silver;
+    color: var(--color-text-neutral);
     font-size: 0.8rem;
     margin: auto;
     text-align: center;
@@ -69,7 +69,7 @@ export default class AuthForgotPassword extends Vue {}
   }
   &__button--reset {
     padding: 1em;
-    color: white;
+    color: var(--color-text-primary-light);
     background-color: var(--color-primary);
     margin-left: auto;
     border-radius: 10px;

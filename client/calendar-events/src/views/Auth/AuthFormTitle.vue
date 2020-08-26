@@ -15,7 +15,7 @@
   margin-bottom: 2em;
 }
 .auth-form__title {
-  color: rgb(90, 90, 90);
+  color: var(--color-text-neutral-medium);
   font-size: 1.2em;
   @extend %auth-form-block;
   &--master {
@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: center;
     .material-icons {
-      color: rgb(30, 190, 230);
+      color: var(--color-primary);
       font-size: 2em;
     }
   }

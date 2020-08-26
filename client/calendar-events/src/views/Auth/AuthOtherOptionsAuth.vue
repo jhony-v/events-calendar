@@ -26,8 +26,12 @@ export default {};
     align-items: center;
     font-weight: bold;
     font-size: 14px;
-    color: rgb(90, 90, 90);
+    color: var(--color-text-neutral-medium);
     cursor: pointer;
+    img {
+      border-radius : 100%;
+      margin-right: 10px;
+    }
   }
 }
 </style>

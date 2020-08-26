@@ -2,7 +2,7 @@ import { Module } from "vuex";
 import getters from "./getters";
 import mutations from "./mutations";
 import actions from "./actions";
-import { TypesStore } from './auth.types';
+import { TypesStore } from './@types/auth-types';
 
 const state: TypesStore.AuthState = {
   id: 1,
