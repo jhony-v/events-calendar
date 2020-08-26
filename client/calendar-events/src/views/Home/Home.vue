@@ -1,20 +1,41 @@
 <template>
-  <div class="home">
-    <loading-spinner label="Verificando datos"></loading-spinner>
+  <div class="pagelet">
+    <div class="pagelet__navigator">
+      <navigator-header-toolbar></navigator-header-toolbar>
+    </div>
+    <div class="pagelet__main">
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
+import LoadingSpinner from "@/components/styled/LoadingSpinner.vue";
 
-import { Vue, Component } from "vue-property-decorator";
-import LoadingSpinner from '@/components/styled/LoadingSpinner.vue';
-
-@Component({
+export default {
   components : {
-    LoadingSpinner
+    LoadingSpinner,
+    NavigatorHeaderToolbar : () => ({
+      component : import("@/components/layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue"),
+      loading : LoadingSpinner
+    })
   }
-})
-export default class Home extends Vue {
-
 }
 </script>
+
+<style lang="scss" scoped>
+.pagelet {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  &__navigator {
+    height: 60px;
+    position: relative;
+    z-index: 10;
+  }
+  &__main {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+</style>
