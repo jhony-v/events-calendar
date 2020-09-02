@@ -14,7 +14,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
 import { State, Action } from "vuex-class"; 
-import InputField from "@/components/styled/InputField.vue";
+import InputField from "@/components/Interface/InputField.vue";
 import AuthOtherOptionsAuth from './AuthOtherOptionsAuth.vue';
 import AuthFormTitle from './AuthFormTitle.vue';
 import { TypesStore } from "@/store/modules/auth/@types/auth-types";
