@@ -16,5 +16,7 @@ export default class CalendarItemGridDate extends Vue {}
   text-align: center;
   padding: 1em 5px;
   font-size: 13px;
+  color: var(--color-text-neutral-darker);
+  cursor: pointer;
 }
 </style>

@@ -1,8 +1,8 @@
 <template>
   <div class="calendar-header">
-      <calendar-move-button></calendar-move-button>
+      <calendar-move-button icon="keyboard_arrow_left"></calendar-move-button>
       <calendar-header-text-detail></calendar-header-text-detail>
-      <calendar-move-button></calendar-move-button>
+      <calendar-move-button icon="keyboard_arrow_right"></calendar-move-button>
   </div>
 </template>
 
@@ -26,6 +26,6 @@ export default class CalendarHeaderNavigator extends Vue {
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1em 10%;
+    padding: 1.5em 10%;
 }
 </style>

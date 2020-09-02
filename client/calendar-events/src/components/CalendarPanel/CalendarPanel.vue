@@ -30,7 +30,7 @@ export default class CalendarPanelContainer extends Vue{
 <style lang="scss" scoped>
 .container-calendar {
   background-color: var(--color-bg-primary);
-  margin: 2em auto;
-  box-shadow: 0 10px 10px var(--color-border-neutral);
+  margin: 2em;
+  padding: 10px;
 }
 </style>

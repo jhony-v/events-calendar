@@ -9,7 +9,7 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
-export default class extends Vue {
+export default class CalendarWeekDays extends Vue {
   private weekdays: string[] = [
     "Lun",
     "Mar",
@@ -30,6 +30,8 @@ export default class extends Vue {
     text-align: center;
     padding: 1em 2px;
     font-weight: bold;
+    user-select: none;
+    color: var(--color-text-neutral-darker);
   }
 }
 </style>
