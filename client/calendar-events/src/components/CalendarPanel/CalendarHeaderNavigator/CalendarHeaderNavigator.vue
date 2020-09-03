@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue , Component } from "vue-property-decorator";
 import CalendarMoveButton from "./CalendarMoveButton.vue";
 import CalendarHeaderTextDetail from "./CalendarHeaderTextDetail.vue";

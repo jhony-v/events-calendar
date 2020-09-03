@@ -8,7 +8,8 @@
 import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
-export default class CalendarItemGridDate extends Vue {}
+export default class CalendarItemGridDate extends Vue {
+}
 </script>
 
 <style lang="scss" scoped>
