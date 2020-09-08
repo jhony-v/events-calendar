@@ -1,17 +1,33 @@
 <template>
   <div class="avatar">
-
+    <svg :width="sizeImage" :height="sizeImage" class="avatar--svg" :data-variant="variant">
+      <image :href="src" x="0" y="0" :width="sizeImage" :height="sizeImage" class="image"></image>
+    </svg>
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from "vue-property-decorator";
+type variantAvatar = "yes" | "no";
 
+@Component({})
 export default class Avatar extends Vue {
-
+  @Prop() sizeImage : number = 40;
+  @Prop() src !: string;
+  @Prop() variant : variantAvatar = "no";
 }
 </script>
 
 <style lang="scss">
-
+.avatar {
+  display: inline-block;
+  &--svg {
+    border-radius: 100%;
+    margin: auto;
+    &[data-variant="yes"] {
+      border: 2px solid var(--color-primary);
+      padding: 3px;
+    }
+  }
+}
 </style>
