@@ -4,6 +4,7 @@
       <navigator-header-toolbar></navigator-header-toolbar>
     </div>
     <div class="pagelet__main">
+        <navigator-aside></navigator-aside>
         <calendar-panel></calendar-panel>
     </div>
   </div>
@@ -13,9 +14,11 @@
 import LoadingSpinner from "@/components/Interface/LoadingSpinner.vue";
 import CalendarPanel from "@/components/CalendarPanel/CalendarPanel.vue";
 import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
+import NavigatorAside from "@/components/Layouts/NavigatorAside/NavigatorAside.vue";
 
 export default {
   components : {
+    NavigatorAside,
     LoadingSpinner,
     CalendarPanel,
     NavigatorHeaderToolbar,
@@ -30,7 +33,6 @@ export default {
   flex-direction: column;
   align-items: stretch;
   &__navigator {
-    height: 60px;
     position: relative;
     z-index: 10;
   }
