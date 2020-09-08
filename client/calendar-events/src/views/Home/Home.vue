@@ -4,9 +4,7 @@
       <navigator-header-toolbar></navigator-header-toolbar>
     </div>
     <div class="pagelet__main">
-        <calendar-panel>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dolorem atque expedita placeat alias corrupti quas recusandae. Pariatur tempora reiciendis a odit, earum labore vero voluptas, quas animi quasi vel.
-        </calendar-panel>
+        <calendar-panel></calendar-panel>
     </div>
   </div>
 </template>
@@ -14,15 +12,13 @@
 <script>
 import LoadingSpinner from "@/components/Interface/LoadingSpinner.vue";
 import CalendarPanel from "@/components/CalendarPanel/CalendarPanel.vue";
+import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
 
 export default {
   components : {
     LoadingSpinner,
     CalendarPanel,
-    NavigatorHeaderToolbar : () => ({
-      component : import("@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue"),
-      loading : LoadingSpinner
-    })
+    NavigatorHeaderToolbar,
   }
 }
 </script>

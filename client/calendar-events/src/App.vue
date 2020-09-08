@@ -27,6 +27,6 @@ input {
 }
 
 body {
-  background: var(--color-bg-primary);
+  background: var(--color-bg-page);
 }
 </style>

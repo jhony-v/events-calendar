@@ -1,25 +1,24 @@
-
 :root {
-  --color-primary: rgb(30, 190, 230);
+  --color-primary: #8800f3;
   --color-primary-dark-medium: rgb(30, 130, 230);
   --color-primary-dark: rgb(30, 80, 190);
-  --color-bg-primary : #ffffff;
-  --color-text-primary : var(--color-primary);
-  --color-text-primary-light : white;
-  --color-text-neutral : #bbbbbb;
-  --color-text-neutral-medium : #5a5a5a; 
-  --color-text-neutral-darker : #3c3c3c;
-  --color-text-neutral-dark : #000000;
-  --color-border-neutral : rgba(0,0,0,.1);
-
+  --color-bg-primary: #ffffff;
+  --color-bg-page:rgb(250, 250, 250);
+  --color-text-primary: var(--color-primary);
+  --color-text-primary-light: white;
+  --color-text-neutral: #bbbbbb;
+  --color-text-neutral-medium: #5a5a5a;
+  --color-text-neutral-darker: #3c3c3c;
+  --color-text-neutral-dark: #000000;
+  --color-border-neutral: rgba(0, 0, 0, 0.1);
 }
 
 // change of theme system default
 
-@media (prefers-color-scheme : light) {
+@media (prefers-color-scheme: light) {
   :root {
-    --color-bg-primary : rgb(20,20,20);
-    --color-text-neutral-darker : rgb(230,230,230);
-    --color-border-neutral : rgba(200,200,200,.1);
+    --color-bg-primary: rgb(20, 20, 20);
+    --color-text-neutral-darker: rgb(230, 230, 230);
+    --color-border-neutral: rgba(200, 200, 200, 0.1);
   }
 }
