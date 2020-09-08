@@ -5,7 +5,6 @@
     </div>
     <div class="pagelet__main">
         <calendar-panel></calendar-panel>
-        <avatar :size-image="80" variant="yes" src="https://cdn.pixabay.com/photo/2015/12/08/00/51/coffee-beans-1082116__340.jpg"></avatar>
     </div>
   </div>
 </template>
@@ -14,10 +13,9 @@
 import LoadingSpinner from "@/components/Interface/LoadingSpinner.vue";
 import CalendarPanel from "@/components/CalendarPanel/CalendarPanel.vue";
 import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
-import Avatar from "@/components/Interface/Avatar.vue";
+
 export default {
   components : {
-    Avatar,
     LoadingSpinner,
     CalendarPanel,
     NavigatorHeaderToolbar,
