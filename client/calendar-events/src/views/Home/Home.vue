@@ -4,26 +4,26 @@
       <navigator-header-toolbar></navigator-header-toolbar>
     </div>
     <div class="pagelet__main">
-        <navigator-aside></navigator-aside>
-        <calendar-panel></calendar-panel>
+      <home-aside-pagelet></home-aside-pagelet>
+      <home-main-drawer-pagelet></home-main-drawer-pagelet>
     </div>
   </div>
 </template>
 
 <script>
 import LoadingSpinner from "@/components/Interface/LoadingSpinner.vue";
-import CalendarPanel from "@/components/CalendarPanel/CalendarPanel.vue";
 import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
-import NavigatorAside from "@/components/Layouts/NavigatorAside/NavigatorAside.vue";
+import HomeAsidePagelet from "./HomeAsidePagelet.vue";
+import HomeMainDrawerPagelet from "./HomeMainDrawerPagelet.vue";
 
 export default {
-  components : {
-    NavigatorAside,
+  components: {
+    HomeAsidePagelet,
+    HomeMainDrawerPagelet,
     LoadingSpinner,
-    CalendarPanel,
     NavigatorHeaderToolbar,
-  }
-}
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -38,7 +38,9 @@ export default {
   }
   &__main {
     height: 100%;
-    overflow-y: auto;
+    display: flex;
+    align-items: stretch;
+    overflow-y: hidden;
   }
 }
 </style>

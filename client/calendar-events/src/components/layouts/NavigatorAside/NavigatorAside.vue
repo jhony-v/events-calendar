@@ -25,12 +25,12 @@ const dataListNavLinks: INavLink[] = [
     icon: "people",
   },
   {
-    link: "/people",
-    icon: "people",
+    link: "/article",
+    icon: "article",
   },
   {
-    link: "/people",
-    icon: "people",
+    link: "/explore",
+    icon: "explore",
   },
 ];
 
@@ -51,6 +51,7 @@ export default class NavigatorAside extends Vue {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 2em;
   &__item {
       margin-bottom: 2em;
   }
