@@ -3,7 +3,7 @@
     <card-flat>
       <div class="container">
         <tabs-browser-panel :data-links="data" alignment="right"></tabs-browser-panel>
-        <calendar-panel></calendar-panel>
+        <router-view></router-view>
       </div>
     </card-flat>
   </div>
@@ -11,13 +11,12 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import CalendarPanel from "@/components/CalendarPanel/CalendarPanel.vue";
 import TabsBrowserPanel, { DataLinkTabBrowser } from '@/components/Layouts/TabsBrowserPanel/TabsBrowserPanel.vue';
 import CardFlat from '@/components/Cards/CardFlat.vue';
+import linkRoutes from '@/constants/links-routes';
 
 @Component({
   components: {
-    CalendarPanel,
     TabsBrowserPanel,
     CardFlat
   },
@@ -27,12 +26,12 @@ export default class MainDrawerPagelet extends Vue {
   created(){
     this.data = [
       {
-      to : "/",
-      text : "item 1"
+      to : linkRoutes.home.children.default,
+      text : "my events"
     },
           {
-      to : "/s",
-      text : "item 2"
+      to : linkRoutes.home.children.newEvent,
+      text : "new event"
     },
     {
       to : "/s",

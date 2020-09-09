@@ -1,7 +1,7 @@
 <template>
   <div class="navigator-aside">
     <div v-for="(value, index) in listNavLinks" :key="index" class="navigator-aside__item">
-      <button-rounded-link :to="value.link" :text="value.icon">{{value.icon}}</button-rounded-link>
+      <button-rounded-link :to="value.link" :text="value.text">{{value.icon}}</button-rounded-link>
     </div>
   </div>
 </template>
@@ -9,28 +9,34 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import ButtonRoundedLink from "@/components/Buttons/ButtonRoundedLink.vue";
+import linkRoutes from '@/constants/links-routes';
 
 interface INavLink {
   link: string;
   icon: string;
+  text: string;
 }
 
 const dataListNavLinks: INavLink[] = [
   {
-    link: "/",
+    link: linkRoutes.home.default,
     icon: "home",
+    text : "home",
   },
   {
-    link: "/people",
+    link: linkRoutes.about.default,
     icon: "people",
+    text : "about me",
   },
   {
-    link: "/article",
-    icon: "article",
-  },
-  {
-    link: "/explore",
+    link: linkRoutes.explore.default,
     icon: "explore",
+    text : "explore",
+  },
+  {
+    link: linkRoutes.settings.default,
+    icon: "settings",
+    text : "settings",
   },
 ];
 

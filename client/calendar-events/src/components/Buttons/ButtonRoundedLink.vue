@@ -1,6 +1,7 @@
 <template>
   <router-link
     :to="to"
+    :exact="true"
     class="link-button"
     active-class="link-button--selected"
   >
