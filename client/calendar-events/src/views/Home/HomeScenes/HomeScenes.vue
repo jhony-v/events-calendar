@@ -1,7 +1,6 @@
 <template>
   <div class="home-scenes">
     <tabs-browser-panel :data-links="data" alignment="right"></tabs-browser-panel>
-    <task-multiple-chain-images></task-multiple-chain-images>
     <router-view></router-view>
   </div>
 </template>

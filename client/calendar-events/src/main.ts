@@ -5,6 +5,7 @@ import store from "./store";
 import "./router/routerAuthCheck";
 
 Vue.config.productionTip = false;
+
 new Vue({
   router,
   store,
