@@ -1,7 +1,7 @@
 <template>
   <div class="navigator-aside">
     <div v-for="(value, index) in listNavLinks" :key="index" class="navigator-aside__item">
-        <button-rounded-link :to="value.link" :text="value.icon">{{value.icon}}</button-rounded-link>
+      <button-rounded-link :to="value.link" :text="value.icon">{{value.icon}}</button-rounded-link>
     </div>
   </div>
 </template>
@@ -46,8 +46,6 @@ export default class NavigatorAside extends Vue {
 
 <style lang="scss" scoped>
 .navigator-aside {
-  background-color: var(--color-bg-primary);
-  border-radius: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;

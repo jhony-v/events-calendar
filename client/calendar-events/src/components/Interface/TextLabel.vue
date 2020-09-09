@@ -1,5 +1,5 @@
 <template>
-  <span :class="classNameUIText"><slot></slot></span>
+  <span :class="computedClassNameUIText"><slot></slot></span>
 </template>
 
 <script lang="ts">
@@ -10,7 +10,7 @@ export default class TextLabel extends Vue {
   @Prop() weight!: boolean;
   @Prop() variant!: string;
   @Prop() fontSizeText!: string;
-  get classNameUIText() {
+  get computedClassNameUIText() {
     return [
       "ui-text",
       this.variant,
