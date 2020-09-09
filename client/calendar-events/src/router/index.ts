@@ -15,6 +15,7 @@ const routes: Array<RouteConfig> = [
     children: [
       {
         path: linkRoutes.home.children.default,
+        component : () => import("../views/Home/HomeScenes/HomeScenes.vue"),
         children: [
           {
             path: linkRoutes.home.children.default,
