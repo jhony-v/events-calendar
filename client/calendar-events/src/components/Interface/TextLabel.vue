@@ -31,7 +31,7 @@ $sizes: (small 13px) (normal 0.95rem) (medium 1.15rem) (big 1.5rem);
     font-weight: 800;
   }
   &.smooth {
-    color: var(--color-text-neutral-medium);
+    color: var(--color-text-neutral);
   }
   @each $className,$size in $sizes {
     &.#{$className} {

@@ -3,6 +3,7 @@
     <card-flat>
       <div class="container">
         <navigator-aside></navigator-aside>
+        <button-logout-link style="padding-bottom:1em">Salir</button-logout-link>
       </div>
     </card-flat>
   </div>
@@ -12,11 +13,13 @@
 import { Vue, Component } from "vue-property-decorator";
 import NavigatorAside from "@/components/Layouts/NavigatorAside/NavigatorAside.vue";
 import CardFlat from '@/components/Cards/CardFlat.vue';
+import ButtonLogoutLink from '@/components/Buttons/ButtonLogoutLink.vue';
 
 @Component({
   components: {
     NavigatorAside,
-    CardFlat
+    CardFlat,
+    ButtonLogoutLink
   },
 })
 export default class HomeAsidePagelet extends Vue {}

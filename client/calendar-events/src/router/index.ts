@@ -7,7 +7,6 @@ Vue.use(VueRouter);
 const routes: Array<RouteConfig> = [
   {
     path: linkRoutes.home.default,
-    name: "Dashboard",
     component: () => import("../views/Home/Home.vue"),
     meta: {
       auth: true,
@@ -18,6 +17,7 @@ const routes: Array<RouteConfig> = [
         component : () => import("../views/Home/HomeScenes/HomeScenes.vue"),
         children: [
           {
+            name: "Dashboard",
             path: linkRoutes.home.children.default,
             component: () => import("../views/Home/HomeScenes/Default/HomeDefaultScene.vue"),
           },

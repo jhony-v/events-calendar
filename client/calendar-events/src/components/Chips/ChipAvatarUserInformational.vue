@@ -1,7 +1,7 @@
 <template>
   <div class="chip-user-informational">
     <div class="avatar">
-      <avatar :src="image"></avatar>
+      <avatar-image :src="image"></avatar-image>
     </div>
     <div class="user" @click="onClickUser">
       <text-label :weight="true">{{ username }}</text-label>
@@ -12,12 +12,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import Avatar from "../Interface/Avatar.vue";
+import AvatarImage from "../Interface/AvatarImage.vue";
 import TextLabel from "../Interface/TextLabel.vue";
 
 @Component({
   components: {
-    Avatar,
+    AvatarImage,
     TextLabel,
   },
 })

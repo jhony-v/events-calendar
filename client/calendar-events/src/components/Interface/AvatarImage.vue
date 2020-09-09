@@ -11,10 +11,10 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 type variantAvatar = "yes" | "no";
 
 @Component({})
-export default class Avatar extends Vue {
-  @Prop() sizeImage : number = 40;
+export default class AvatarImage extends Vue {
   @Prop() src !: string;
-  @Prop() variant : variantAvatar = "no";
+  @Prop({default:50}) sizeImage !: number;
+  @Prop({default:"no"}) variant !: variantAvatar;
 }
 </script>
 
@@ -26,7 +26,7 @@ export default class Avatar extends Vue {
     margin: auto;
     &[data-variant="yes"] {
       border: 2px solid var(--color-primary);
-      padding: 3px;
+      padding: 4px;
     }
   }
 }
