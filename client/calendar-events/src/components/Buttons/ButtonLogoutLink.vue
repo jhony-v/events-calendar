@@ -1,5 +1,6 @@
 <template>
   <div class="logout">
+    Logout
   </div>
 </template>
 
@@ -19,5 +20,7 @@ export default class ButtonLogoutLink extends Vue {}
 .logout {
   text-align: center;
   margin: auto;
+  color: var(--color-text-neutral);
+  font-weight: 900;
 }
 </style>

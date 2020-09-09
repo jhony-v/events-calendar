@@ -3,7 +3,7 @@
     <card-flat>
       <div class="container">
         <navigator-aside></navigator-aside>
-        <button-logout-link style="padding-bottom:1em">Salir</button-logout-link>
+        <button-logout-link style="padding-bottom:1em" />
       </div>
     </card-flat>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="avatar">
     <svg :width="sizeImage" :height="sizeImage" class="avatar--svg" :data-variant="variant">
-      <image :href="src" x="0" y="0" :width="sizeImage" :height="sizeImage" class="image"></image>
+      <image :href="src" x="0" y="0" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" class="image"></image>
     </svg>
   </div>
 </template>

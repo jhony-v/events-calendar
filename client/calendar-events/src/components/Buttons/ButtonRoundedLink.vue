@@ -44,7 +44,7 @@ export default class ButtonRoundedLink extends Vue {
     color: var(--color-text-neutral);
     display: inline-block;
     margin-top: 10px;
-    font-size: .9rem;
+    font-size: .8rem;
   }
   &--selected {
     .icon {
