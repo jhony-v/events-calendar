@@ -1,18 +1,19 @@
-<template functional>
+<template>
   <div class="task-multiple">
     <div class="image__collection">
-      <avatar-image v-for="(image, index) in images" :key="index" :src="image" class="image__item" />
+      <avatar-image v-for="(image, index) in images" :key="index" :src="image" class="image__item"></avatar-image>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Vue, Component, Prop } from "vue-property-decorator";
 import AvatarImage from "../Interface/AvatarImage.vue";
+
 @Component({
   components: {
     AvatarImage,
-  },
+  }
 })
 export default class TaskMultipleChainImages extends Vue {
   @Prop() images!: string[];
@@ -25,12 +26,12 @@ export default class TaskMultipleChainImages extends Vue {
     display: inline-block;
     position: relative;
     .image__item {
-        position: relative;
-        @for $i from 0 through 3 {
-            &:nth-child(#{$i}){
-                margin-left: $i * -0.2em;
-            }
+      position: relative;
+      @for $i from 0 through 3 {
+        &:nth-child(#{$i}) {
+          margin-left: $i * -0.2em;
         }
+      }
     }
   }
 }

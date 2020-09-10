@@ -12,14 +12,14 @@
 <script>
 import { Vue, Component } from "vue-property-decorator";
 import NavigatorAside from "@/components/Layouts/NavigatorAside/NavigatorAside.vue";
-import CardFlat from '@/components/Cards/CardFlat.vue';
-import ButtonLogoutLink from '@/components/Buttons/ButtonLogoutLink.vue';
+import CardFlat from "@/components/Cards/CardFlat.vue";
+import ButtonLogoutLink from "@/components/Buttons/ButtonLogoutLink.vue";
 
 @Component({
   components: {
     NavigatorAside,
     CardFlat,
-    ButtonLogoutLink
+    ButtonLogoutLink,
   },
 })
 export default class HomeAsidePagelet extends Vue {}
@@ -27,8 +27,13 @@ export default class HomeAsidePagelet extends Vue {}
 
 <style lang="scss" scoped>
 .aside-pagelet {
-    width: 300px;
-    padding: 1em 2em 0;
-    flex: none;
+  width: 300px;
+  padding: 1em 2em;
+  flex: none;
+  display: flex;
+  align-items: stretch;
+  > * {
+    width: 100%;
+  }
 }
 </style>

@@ -14,11 +14,11 @@ export default class YearMonthDecorator extends Vue {
   @Prop() datetime!: string;
 
   get computedGetYear() {
-    return moment(new Date(this.datetime)).year();
+    return moment(this.datetime).year();
   }
 
   get computedGetMonth() {
-    return moment(new Date(this.datetime)).month();
+    return moment(this.datetime).format("MMMM");
   }
 }
 </script>

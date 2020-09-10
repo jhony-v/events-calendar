@@ -14,11 +14,11 @@ export default class TimeDayDecorator extends Vue {
   @Prop() datetime!: string;
 
   get computedGetTime() {
-    return moment(new Date(this.datetime)).format("HH:mm a");
+    return moment(this.datetime).format("HH:mm a");
   }
 
   get computedGetWeekday() {
-    return moment(new Date(this.datetime)).day();
+    return moment(this.datetime).format("dddd");
   }
 }
 </script>
@@ -29,8 +29,8 @@ export default class TimeDayDecorator extends Vue {
   flex-direction: column;
   align-items: flex-end;
   &__time {
-    font-weight: bold;
-    font-size: 3rem;
+    font-weight: 900;
+    font-size: 2.5rem;
     color: var(--color-text-neutral-medium);
   }
   &__weekday {

@@ -15,6 +15,7 @@ export default {};
   &__title {
     font-weight: 900;
     font-size: 1.6rem;
+    color: var(--color-text-neutral-darker);
   }
 }
 </style>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;900&display=swap');
+
 :root {
   --color-primary: #8800f3;
   --color-primary-dark-medium: rgb(30, 130, 230);
@@ -17,8 +19,10 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+    --color-bg-page: rgb(30,30,30);
     --color-layout-primary: rgb(20, 20, 20);
     --color-text-neutral-darker: rgb(230, 230, 230);
+    --color-text-neutral-dark: #ffffff;
     --color-border-neutral: rgba(200, 200, 200, 0.1);
   }
 }

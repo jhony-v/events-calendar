@@ -10,23 +10,29 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import CardFlat from '@/components/Cards/CardFlat.vue';
+import CardFlat from "@/components/Cards/CardFlat.vue";
 
 @Component({
   components: {
-    CardFlat
+    CardFlat,
   },
 })
 export default class MainDrawerPagelet extends Vue {
+  private datetime: Date = new Date();
 }
 </script>
 
 <style lang="scss" scoped>
 .main-drawer-pagelet {
+  width: 100%;
+  padding: 1em 2em;
+  display: flex;
+  align-items: stretch;
+  > * {
     width: 100%;
-    padding: 1em 2em 0;
-    .container {
-      padding: 1em;
-    }
+  }
+  .container {
+    padding: 1em;
+  }
 }
 </style>
