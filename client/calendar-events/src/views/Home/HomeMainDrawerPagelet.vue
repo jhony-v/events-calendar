@@ -14,7 +14,7 @@ import CardFlat from "@/components/Cards/CardFlat.vue";
 
 @Component({
   components: {
-    CardFlat,
+    CardFlat
   },
 })
 export default class MainDrawerPagelet extends Vue {

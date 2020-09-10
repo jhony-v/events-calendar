@@ -6,7 +6,7 @@
         <input-field label="Type your password" class="input" @oninput="password = $event"></input-field>
         <router-link class="auth-form__forword" to="/">Forworg password?</router-link>
         <div class="auth-form__button" tabindex="0" @keyup.enter="onAuthSignIn" @click="onAuthSignIn">Sign In</div>
-        <auth-other-options></auth-other-options>
+        <auth-other-options-auth></auth-other-options-auth>
     </div>
   </div>
 </template>
@@ -53,6 +53,7 @@ export default class Auth extends Vue {
 .auth-form {
     $self : &;
     box-shadow: 0 10px 20px var(--color-border-neutral);
+    background-color: var(--color-layout-primary);
     border-radius: 10px;
     padding: 3em;
     margin: auto;
