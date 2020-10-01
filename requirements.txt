@@ -1,7 +1,6 @@
 Flask
 Flask-Cors
-flask-migrate
-flask-SQLAlchemy
 python-dotenv
 pymysql
+flask-mysqldb
 pyjwt
