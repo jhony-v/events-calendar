@@ -28,6 +28,7 @@ export default class InputFieldSearch extends Vue {
         padding: 10px;
         border-radius: 20px;
         width: 100%;
+        background-color: rgba(0,0,0,.05);
     }
 }
 </style>

@@ -14,7 +14,6 @@ export default class WrapperApplicationName extends Vue{}
 <style lang="scss" scoped>
 .wrapper-app {
   display: inline-block;
-  width: 500px;
   &__title {
     font-weight: 900;
     font-size: 1.6rem;

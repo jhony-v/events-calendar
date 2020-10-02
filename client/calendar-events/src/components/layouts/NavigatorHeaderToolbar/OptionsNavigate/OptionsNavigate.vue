@@ -1,17 +1,16 @@
 <template>
   <div class="navigate">
-      <button-rounded-iconify type="add"></button-rounded-iconify>
-      <button-rounded-iconify type="notification"></button-rounded-iconify>
+    <input-field-search></input-field-search>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { ButtonRoundedIconify } from "@/components/Common/Buttons";
+import InputFieldSearch from "@/components/Packages/FormControls/InputFieldSearch.vue";
 
 @Component({
     components:{
-        ButtonRoundedIconify
+        InputFieldSearch
     }
 })
 export default class OptionsNavigate extends Vue{
@@ -21,6 +20,7 @@ export default class OptionsNavigate extends Vue{
 
 <style lang="scss" scoped>
 .navigate {
-    display: flex;
+    width: 500px;
+    margin: auto;
 }   
 </style>

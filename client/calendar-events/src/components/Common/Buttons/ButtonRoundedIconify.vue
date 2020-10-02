@@ -34,6 +34,7 @@ export default class ButtonRoundedIconify extends Vue {
 <style lang="scss" scoped>
 $size: 43px;
 .button-iconify {
+    flex: 0 0 auto;
     width: $size;
     height: $size;
     position: relative;
