@@ -1,7 +1,7 @@
 <template>
   <card-flat class="user-card">
     <div class="avatar">
-      <avatar-image variant="yes" :src="image" />
+      <avatar-image variant="featured" :src="image" />
     </div>
     <div class="detail">
       <div class="detail__content">
@@ -17,9 +17,9 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import {AvatarImage} from "@/components/Common/AvatarImages";
-import {TextLabel} from "@/components/Common/TextLabels";
-import CardFlat from './CardFlat.vue';
+import { AvatarImage } from "@/components/Common/AvatarImages";
+import { TextLabel } from "@/components/Common/TextLabels";
+import { CardFlat } from '.';
 
 @Component({
   components: {

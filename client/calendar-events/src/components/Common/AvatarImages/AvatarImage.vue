@@ -24,7 +24,7 @@ export default class AvatarImage extends Vue {
   &--svg {
     border-radius: 100%;
     margin: auto;
-    &[data-variant="yes"] {
+    &[data-variant="featured"] {
       border: 2px solid var(--color-primary);
       padding: 4px;
     }

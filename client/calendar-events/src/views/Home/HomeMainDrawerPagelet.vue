@@ -10,7 +10,7 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import {CardFlat} from "@/components/Common/Cards";
+import { CardFlat } from "@/components/Common/Cards";
 
 @Component({
   components: {
