@@ -1,7 +1,13 @@
-class User(object):
+from dataclasses import dataclass
+
+@dataclass
+class User:
     def __init(self):
-        self.id = ""
-        self.username = ""
-        self.fullName = ""
-        self.password = ""
-        self.profileImage = ""
+        self.id: int = ""
+        self.username: str = ""
+        self.email: str = ""
+        self.password: str = ""
+        self.fullName: str = ""
+        self.avatar: str = ""
+        self.description: str = ""
+        self.createdDate: str = ""

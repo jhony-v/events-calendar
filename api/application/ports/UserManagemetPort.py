@@ -5,5 +5,5 @@ class UpdateUserAccountPort(object):
         pass
     
 class ResetPasswordPort(object):
-    def resetPassword(self, oldPassword: str, newPassword: str):
+    def resetPassword(self, oldPasswordUser: User, newPasswordUser: User):
         pass

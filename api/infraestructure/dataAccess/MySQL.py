@@ -1,15 +1,30 @@
-import api.infraestructure.adapters.adaptersDatabase.CreateDatabaseAdapter as Create
-import api.infraestructure.adapters.adaptersDatabase.FetchDatabaseAdapter as Fetch
-import api.infraestructure.adapters.adaptersDatabase.DeleteDatabaseAdapter as Delete
+import api.infraestructure.adapters.adaptersDatabase.ExecuteDatabaseAdapter as DatabaseAdapter
+from databases import mysqlConnection
 
-
-class MySQL(Fetch.GetAllDatabaseAdapter, Create.CreateNewDataDatabaseAdapter, Delete.DeleteDatabaseAdapter):
+class MySQL(DatabaseAdapter.ExecuteDatabaseAdapter):
     def __init__(self):
-        pass
+        self.connection = mysqlConnection
 
-    def getAll(self, statement):
+    def cmd(self):
         try:
-            return statement
+            return self.connection.cursor()
         except Exception as e:
             return e
-    
+
+    def fetchAll(self, statement: str, parameters: tuple):
+        with self.connection() as cursor:
+            cursor.execute(statement, parameters)
+            return cursor.fetchAll()
+
+    def fetch(self, statement: str, parameters: tuple):
+        with self.cmd() as cursor:
+            cursor.execute(statement, parameters)
+            return cursor.fetchOne()
+
+    def execute(self, statement: str, parameters: tuple):
+        with self.cmd() as cursor:
+            cursor.execute(statement, parameters)
+        self.connection.commit()
+
+    def __delete__(self):
+        self.connection.close()

@@ -1,11 +1,11 @@
-from flask import Blueprint, request, make_response
+from flask import Blueprint, request, make_response, jsonify
 from utils import Response
 
 userRoute = Blueprint('user', __name__)
 
 @userRoute.route('/', methods=['GET'])
 def getAllUsers():
-    pass
+    return jsonify()
 
 @userRoute.route('/', methods=['POST'])
 def createNewUser():

@@ -1,9 +1,15 @@
-from os import environ,path
+from os import environ, path
 from dotenv import load_dotenv
 
 baseDir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(baseDir,'../.env'))
+load_dotenv(path.join(baseDir, '../.env'))
 
-SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')
-SQLALCHEMY_TRACK_MODIFICATIONS = False
-JWT_KEY = environ.get('JWT_KEY')
+CONFIG_JWT_KEY = environ.get('JWT_KEY')
+
+CONFIG_DATABASE_MYSQL = {
+    "host": "localhost",
+    "user": "root",
+    "password": "",
+    "db": "calendar_events",
+    "charset": "utf8"
+}
