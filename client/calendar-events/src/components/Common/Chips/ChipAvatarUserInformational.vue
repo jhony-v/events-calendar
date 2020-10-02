@@ -12,8 +12,8 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import AvatarImage from "../Interface/AvatarImage.vue";
-import TextLabel from "../Interface/TextLabel.vue";
+import {AvatarImage} from "@/components/Common/AvatarImages";
+import {TextLabel} from "@/components/Common/TextLabels";
 
 @Component({
   components: {

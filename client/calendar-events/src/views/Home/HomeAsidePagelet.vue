@@ -12,8 +12,8 @@
 <script>
 import { Vue, Component } from "vue-property-decorator";
 import NavigatorAside from "@/components/Layouts/NavigatorAside/NavigatorAside.vue";
-import CardFlat from "@/components/Cards/CardFlat.vue";
-import ButtonLogoutLink from "@/components/Buttons/ButtonLogoutLink.vue";
+import { CardFlat } from "@/components/Common/Cards";
+import { ButtonLogoutLink } from "@/components/Common/Buttons";
 
 @Component({
   components: {

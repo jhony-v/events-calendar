@@ -5,14 +5,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Vue, Component, Prop, Emit, Ref } from "vue-property-decorator";
 
 @Component({})
 export default class InputField extends Vue {
-  @Prop() label;
-  @Ref() input;
-  onChangeInput = (e) => this.$emit("oninput",e.target.value);
+  @Prop() label !: string;
+  @Ref() input !: HTMLInputElement;
+  onChangeInput = (e: any) => this.$emit("oninput",e.target.value);
 }
 </script>
 

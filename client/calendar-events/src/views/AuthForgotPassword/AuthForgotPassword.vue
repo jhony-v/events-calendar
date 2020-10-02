@@ -24,7 +24,7 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import InputField from "@/components/Interface/InputField.vue";
+import InputField from "@/components/Packages/FormControls/InputField.vue";
 
 @Component({
   components: {

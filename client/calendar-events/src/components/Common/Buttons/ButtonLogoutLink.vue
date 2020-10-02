@@ -6,7 +6,7 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import TextLabel from "../Interface/TextLabel.vue";
+import {TextLabel} from "@/components/Common/TextLabels";
 
 @Component({
   components: {

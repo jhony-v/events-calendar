@@ -18,8 +18,8 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import TextLabel from "@/components/Interface/TextLabel.vue";
-import TaskMultipleChainImages from "@/components/TaskImages/TaskMultipleChainImages.vue";
+import { TextLabel } from "@/components/Common/TextLabels";
+import TaskMultipleChainImages from "@/components/Packages/TaskImages/TaskMultipleChainImages.vue";
 import TimeDayDecorator from "./DatetimeDecorators/TimeDayDecorator.vue";
 import YearMonthDecorator from "./DatetimeDecorators/YearMonthDecorator.vue";
 

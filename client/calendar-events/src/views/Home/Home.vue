@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import LoadingSpinner from "@/components/Interface/LoadingSpinner.vue";
+import {LoadingSpinner} from "@/components/Common/Loaders";
 import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
 import HomeAsidePagelet from "./HomeAsidePagelet.vue";
 import HomeMainDrawerPagelet from "./HomeMainDrawerPagelet.vue";

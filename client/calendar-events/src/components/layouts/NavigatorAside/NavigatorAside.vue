@@ -1,15 +1,21 @@
 <template>
   <div class="navigator-aside">
-    <div v-for="(value, index) in listNavLinks" :key="index" class="navigator-aside__item">
-      <button-rounded-link :to="value.link" :text="value.text">{{value.icon}}</button-rounded-link>
+    <div
+      v-for="(value, index) in listNavLinks"
+      :key="index"
+      class="navigator-aside__item"
+    >
+      <button-rounded-link :to="value.link" :text="value.text">{{
+        value.icon
+      }}</button-rounded-link>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import ButtonRoundedLink from "@/components/Buttons/ButtonRoundedLink.vue";
-import linkRoutes from '@/constants/links-routes';
+import { ButtonRoundedLink } from "@/components/Common/Buttons";
+import linkRoutes from "@/constants/links-routes";
 
 interface INavLink {
   link: string;
@@ -21,22 +27,22 @@ const dataListNavLinks: INavLink[] = [
   {
     link: linkRoutes.home.default,
     icon: "home",
-    text : "home",
+    text: "home",
   },
   {
     link: linkRoutes.about.default,
     icon: "people",
-    text : "about me",
+    text: "about me",
   },
   {
     link: linkRoutes.explore.default,
     icon: "explore",
-    text : "explore",
+    text: "explore",
   },
   {
     link: linkRoutes.settings.default,
     icon: "settings",
-    text : "settings",
+    text: "settings",
   },
 ];
 
@@ -57,7 +63,7 @@ export default class NavigatorAside extends Vue {
   align-items: center;
   padding-top: 2em;
   &__item {
-      margin-bottom: 2em;
+    margin-bottom: 2em;
   }
 }
 </style>

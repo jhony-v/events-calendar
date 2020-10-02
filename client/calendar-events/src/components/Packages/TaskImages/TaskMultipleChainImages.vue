@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop } from "vue-property-decorator";
-import AvatarImage from "../Interface/AvatarImage.vue";
+import {AvatarImage} from "@/components/Common/AvatarImages";
 
 @Component({
   components: {
