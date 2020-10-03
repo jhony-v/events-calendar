@@ -1,11 +1,12 @@
 <template>
-  <card-flat>
-    <div class="card--event">
-      <text-label>{{ title }}</text-label>
-      <img :src="image" />
+  <card-flat class="card">
+    <div class="card__header-event">
+      <text-label :weight="true" fontSizeText="medium">{{ title }}</text-label>
+      <img :src="image" class="card__image--primary" />
     </div>
-    <div class="card--user">
+    <div class="card__user">
       <user-card-selectable
+        class="card__user--selectable"
         :detail="user.email"
         :image="user.avatar"
         :title="user.username"
@@ -39,4 +40,28 @@ export default class DefaultCardUserEvent extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+$card: card;
+.#{$card} {
+  padding: 30px 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  &__header-event {
+    display: flex;
+    flex-direction: column;
+  }
+  &__user {
+    &--selectable {
+      box-shadow: none;
+    }
+  }
+  &__image {
+    &--primary {
+      border-radius: 10px;
+      width: 100%;
+      height: 150px;
+      margin: 30px auto 20px;
+      object-fit: cover;
+    }
+  }
+}
+</style>
