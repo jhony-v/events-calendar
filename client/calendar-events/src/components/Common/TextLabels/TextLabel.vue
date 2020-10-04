@@ -25,9 +25,9 @@ export default class TextLabel extends Vue {
 
 <style lang="scss" scoped>
 $sizes: (small 13px) (normal 0.95rem) (medium 1.15rem) (big 1.5rem);
-
 .ui-text {
   color: var(--color-text-neutral-dark);
+  word-wrap: break-word;
   &.weight {
     font-weight: 800;
   }

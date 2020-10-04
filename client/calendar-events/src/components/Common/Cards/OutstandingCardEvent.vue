@@ -1,12 +1,13 @@
 <template>
   <card-flat class="card">
-    <div class="card--col">
+    <div class="card--col card--left">
       <img :src="imageEvent" class="card__image-event" />
     </div>
-    <div class="card--col">
+    <div class="card--col card--right">
       <div class="card__description-event">
         <div class="row-title">
-          <text-label fontSizeText="medium" :weight="true">{{title}}</text-label>
+          {{title}}
+          <!-- <text-label fontSizeText="medium" :weight="true">{{title}}</text-label> -->
         </div>
         <div class="row-user">
           <text-label variant="smooth" fontSizeText="regular">By</text-label>
@@ -48,9 +49,14 @@ $card: card;
   background-color: rgba(0, 0, 0, 0.05);
   padding: 10px;
   display: flex;
+  .#{$card}--left {
+  }
+  .#{$card}--right {
+  }
   .#{$card}__image-event {
     height: 100%;
     width: 200px;
+    display: block;
     border-radius: 10px;
   }
   .#{$card}__description-event {
@@ -59,6 +65,7 @@ $card: card;
     padding: 5px 0;
     flex-direction: column;
     height: 100%;
+    flex-flow: column;
     .row-title {
       margin-bottom: 15px;
     }

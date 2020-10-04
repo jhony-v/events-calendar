@@ -11,6 +11,6 @@ export default class CardFlat extends Vue {}
 <style lang="scss" scoped>
 .card-flat {
   background-color: var(--color-layout-primary);
-  border-radius: 25px;
+  border-radius: 18px;
 }
 </style>

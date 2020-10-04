@@ -1,7 +1,11 @@
 <template>
   <div class="home-scenes">
-    <tabs-browser-panel :data-links="data" alignment="right"></tabs-browser-panel>
-    <router-view></router-view>
+    <div class="home-scenes__navigator">
+      <tabs-browser-panel :data-links="data" alignment="right"></tabs-browser-panel>
+    </div>
+    <div class="home-scenes__preview">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -38,4 +42,13 @@ export default class HomeDefaultScene extends Vue {
   }
 }
 </script>
-<style></style>
+<style lang="scss" scoped>
+.home-scenes {
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  &__preview {
+    overflow-y: auto;
+  }
+}
+</style>
