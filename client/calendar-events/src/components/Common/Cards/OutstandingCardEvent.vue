@@ -6,12 +6,11 @@
     <div class="card--col card--right">
       <div class="card__description-event">
         <div class="row-title">
-          {{title}}
-          <!-- <text-label fontSizeText="medium" :weight="true">{{title}}</text-label> -->
+          <text-label fontSizeText="normal" :weight="true">{{title}}</text-label>
         </div>
         <div class="row-user">
-          <text-label variant="smooth" fontSizeText="regular">By</text-label>
-          <text-label class="username" fontSizeText="regular">{{username}}</text-label>
+          <text-label variant="smooth" fontSizeText="normal">By</text-label>
+          <text-label class="username" fontSizeText="normal">{{username}}</text-label>
         </div>
         <div class="row-date">
           <text-label variant="smooth" fontSizeText="small">
@@ -49,10 +48,6 @@ $card: card;
   background-color: rgba(0, 0, 0, 0.05);
   padding: 10px;
   display: flex;
-  .#{$card}--left {
-  }
-  .#{$card}--right {
-  }
   .#{$card}__image-event {
     height: 100%;
     width: 200px;
@@ -67,12 +62,13 @@ $card: card;
     height: 100%;
     flex-flow: column;
     .row-title {
-      margin-bottom: 15px;
+      margin-bottom: 18px;
     }
     .row-user {
+      margin-bottom: 12px;
       .username {
         color: var(--color-primary);
-        padding-left: 10px;
+        padding-left: 6px;
       }
     }
     .row-date {

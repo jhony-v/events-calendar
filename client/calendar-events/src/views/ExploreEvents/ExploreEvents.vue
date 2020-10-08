@@ -18,7 +18,7 @@
         <article 
           v-for="(value,key) in mostRelevantEvents" 
           :key="key" 
-          :style="{width:'600px',marginRight:'30px'}"
+          :style="{width:'500px',marginRight:'30px'}"
         >
           <outstanding-card-event 
           :title="value.title"

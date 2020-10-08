@@ -49,6 +49,13 @@ export default class HomeDefaultScene extends Vue {
   grid-template-rows: min-content 1fr;
   &__preview {
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      background: var(--color-scrollbar-thumb);
+    }
   }
 }
 </style>

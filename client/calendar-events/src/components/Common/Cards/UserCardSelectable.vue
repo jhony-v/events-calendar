@@ -5,7 +5,7 @@
     </div>
     <div class="detail">
       <div class="detail__content">
-        <text-label :weight="true">{{title}}</text-label>
+        <text-label fontSizeText="normal" :weight="true" class="title">{{title}}</text-label>
         <text-label variant="smooth" fontSizeText="small">{{detail}}</text-label>
       </div>
       <div class="detail__extra">
@@ -48,6 +48,9 @@ export default class UserCardSelectable extends Vue {
     &__content {
       display: flex;
       flex-direction: column;
+      .title {
+        margin-bottom: 4px;
+      }
     }
   }
 }

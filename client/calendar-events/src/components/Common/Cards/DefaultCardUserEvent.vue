@@ -1,7 +1,7 @@
 <template>
   <card-flat class="card">
     <div class="card__header-event">
-      <text-label :weight="true" fontSizeText="medium">{{ title }}</text-label>
+      <text-label :weight="true" fontSizeText="normal">{{ title }}</text-label>
       <img :src="image" class="card__image--primary" />
     </div>
     <div class="card__user">

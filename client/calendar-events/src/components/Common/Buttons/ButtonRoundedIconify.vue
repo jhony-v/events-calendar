@@ -21,7 +21,8 @@ export default class ButtonRoundedIconify extends Vue {
       const optionsTypeIcons : { [key : string] : string }  = {
         option : "more_vert",
         notification : "notifications",
-        add: "add"
+        add: "add",
+        close: "close"
       }
       return optionsTypeIcons[this.type];
     }
