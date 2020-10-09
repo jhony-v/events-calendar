@@ -2,14 +2,14 @@
   <div class="item">
     <div class="item__col item__col--preview">
       <template v-if="isEditable">
-        <input :value="defaultValue" :placeholder="title" />
+        <input :value="defaultValue" :placeholder="title" class="item__input" />
       </template>
       <template v-else>
-        <text-label>{{ title }}</text-label>
-        <text-label>{{ defaultValue }}</text-label>
+        <text-label fontSizeText="normal" class="title">{{ title }}</text-label>
+        <text-label variant="smooth" fontSizeText="small">{{defaultValue}}</text-label>
       </template>
     </div>
-    <div class="item__col item__col--button-editable">
+    <div class="item__col item__button-editable">
       <i class="material-icons" @click="onToggleEditValue">
         {{ computedGetIconEditable }}
       </i>
@@ -36,7 +36,7 @@ export default class OptionsListTabItemEditable extends Vue {
   }
 
   get computedGetIconEditable() {
-    return this.isEditable ? "close" : "dehaze";
+    return this.isEditable ? "cancel" : "notes";
   }
 }
 </script>
@@ -44,16 +44,36 @@ export default class OptionsListTabItemEditable extends Vue {
 <style lang="scss" scoped>
 .item {
   display: flex;
-  padding: 15px 10px;
+  padding: 20px 10px;
   align-items: center;
   justify-content: space-between;
-  transition: 0.3s;
-  border-bottom: 1px solid var(--color-text-neutral);
+  transition: 0.3s background-color;
+  border-bottom: 1px solid var(--color-border-neutral);
+
+  &:hover {
+      background-color:var(--color-primary-alpha-1);
+  }
 
   &__col {
-    &__button-editable {
-      color: var(--color-text-neutral);
+    &--preview {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      .title {
+        margin-bottom: 5px;
+      }
     }
+  }
+  &__input {
+    $p : 11px;
+    padding-top: $p;
+    padding-bottom: $p;
+    background: none;
+    cursor: pointer;
+  }
+  &__button-editable {
+    color: var(--color-text-neutral);
+    cursor: pointer;
   }
 }
 </style>
