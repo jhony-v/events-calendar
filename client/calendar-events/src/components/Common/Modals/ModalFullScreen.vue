@@ -1,33 +1,39 @@
 <template>
-  <Portal target=".app-modals">
+  <portal to="app-modal" :disabled="open">
     <div class="modal__backdrop">
       <card-flat class="modal__container">
         <div class="modal__container--header">
-          <button-rounded-iconify type="close" class="close-button"></button-rounded-iconify>
+          <text-label :weight="true">{{title}}</text-label>
+          <button-rounded-iconify type="close" class="close-button" @click="onClose" ></button-rounded-iconify>
         </div>
-        <div class="modal__container--body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, cum
-          repellendus provident quo obcaecati vero aspernatur minus. Quisquam
-          odio magnam est deleniti cupiditate. Numquam aperiam asperiores
-          nesciunt fuga sapiente? Temporibus?
-        </div>
+        <div class="modal__container--body"><slot></slot></div>
       </card-flat>
     </div>
-  </Portal>
+  </portal>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import { CardFlat } from "../Cards";
 import { ButtonRoundedIconify } from "@/components/Common/Buttons";
+import { TextLabel } from '../TextLabels';
+
 
 @Component({
   components: {
     CardFlat,
     ButtonRoundedIconify,
+    TextLabel
   },
 })
-export default class ModalFullScreen extends Vue {}
+export default class ModalFullScreen extends Vue {
+  @Prop() title !: string;
+  @Prop({ default: false }) open!: boolean;
+
+  onClose() {
+    this.$emit("onclose");
+  }
+}
 </script>
 
 <style lang="scss" scoped>

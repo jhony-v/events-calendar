@@ -4,9 +4,11 @@ import router from "./router";
 import store from "./store";
 import moment from "moment";
 import "./router/routerAuthCheck";
-
+import PortalVue from "portal-vue";
 // moment.locale("es");
 
+
+Vue.use(PortalVue);
 Vue.config.productionTip = false;
 
 new Vue({
