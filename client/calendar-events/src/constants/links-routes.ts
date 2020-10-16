@@ -9,14 +9,17 @@ const linkRoutes = {
   about: {
     default: "/about",
   },
-  explore : {
-    default : "/explore"
+  explore: {
+    default: "/explore",
   },
   settings: {
-    default: "settings",
+    default: "/settings",
     children: {
       default: "/",
     },
+  },
+  profile: {
+    default: "/profile",
   },
   forgotPassword: {
     default: "/forgot-password",

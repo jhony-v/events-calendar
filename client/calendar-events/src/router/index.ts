@@ -38,6 +38,10 @@ const routes: Array<RouteConfig> = [
       {
         path : linkRoutes.explore.default,
         component : () => import("../views/ExploreEvents/ExploreEvents.vue")
+      },
+      {
+        path : linkRoutes.profile.default,
+        component : () => import("../views/Profile/Profile.vue")
       }
     ],
   },
