@@ -5,3 +5,4 @@ env/pyvenv.cfg
 .env
 **/node_modules
 **/static/
+sql/
