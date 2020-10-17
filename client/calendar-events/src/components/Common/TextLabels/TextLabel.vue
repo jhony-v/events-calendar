@@ -10,6 +10,8 @@ export default class TextLabel extends Vue {
   @Prop() weight!: boolean;
   @Prop() variant!: string;
   @Prop() fontSizeText!: string;
+  @Prop({default:false}) block !: boolean;
+
   get computedClassNameUIText() {
     return [
       "ui-text",
@@ -17,6 +19,7 @@ export default class TextLabel extends Vue {
       this.fontSizeText,
       {
         weight: this.weight,
+        block : this.block
       },
     ];
   }
@@ -28,6 +31,9 @@ $sizes: (small 13px) (normal 0.95rem) (medium 1.15rem) (big 1.5rem);
 .ui-text {
   color: var(--color-text-neutral-dark);
   word-wrap: break-word;
+  &.block {
+    display: block;
+  }
   &.weight {
     font-weight: 800;
   }
