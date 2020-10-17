@@ -2,10 +2,10 @@ from flask import jsonify
 
 
 def Response(status: bool, restProps):
-    if type(restProps) is list:
+    if type(restProps) is list or type(restProps) is dict:
         return jsonify({
             'status': status,
-            **restProps
+            'data': restProps
         })
     else:
         return jsonify({

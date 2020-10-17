@@ -6,10 +6,11 @@ load_dotenv(path.join(baseDir, '../.env'))
 
 CONFIG_JWT_KEY = environ.get('JWT_KEY')
 
+CONFIG_SECRET_PASSWORD = "2020-encrypt"
+
 CONFIG_DATABASE_MYSQL = {
     "host": "localhost",
-    "user": "root",
+    "user": "root", 
     "password": "",
-    "db": "calendar_events",
-    "charset": "utf8"
+    "database": "events_calendar",
 }

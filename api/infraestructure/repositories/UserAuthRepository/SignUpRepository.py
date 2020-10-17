@@ -1,16 +1,19 @@
-from api.application.ports.AccessPort import SignUpPort
 from api.domain.entities.User import User
+from mysql.connector import MySQLConnection
 
-class SignUpRepository(SignUpPort):
-    def __init__(self, dataAccess: ExecuteDatabaseAdapter):
+class SignUpRepository():
+    def __init__(self,dataAccess : MySQLConnection):
         self.dataAccess = dataAccess
 
     def signUp(self, user: User):
-        sql = "INSERT INTO User(username,email,password) VALUES (%s,%s,%s)"
+        sql = "INSERT INTO `User`(username,email,userPassword) VALUES (%s,%s,%s)"
         userParams = (
-            user.username,
-            user.email,
-            user.password
+            user['username'],
+            user['email'],
+            user['password']
         )
-        executeUserSignUp = self.dataAccess.execute(statement=sql,parameters=userParams)
-        return executeUserSignUp
+        with self.dataAccess.cursor() as cursor:
+            cursor.execute(sql, userParams)
+        self.dataAccess.commit()
+        self.dataAccess.close()
+        return {}

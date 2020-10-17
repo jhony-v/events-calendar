@@ -1,14 +1,10 @@
 from flask import Blueprint, jsonify, request
-import api.infraestructure.restControllers.EventsGetController as eventsController
+
 eventRoute = Blueprint('event', __name__)
 
 @eventRoute.route('/', methods=['GET'])
 def getAllEvents():
-    response = eventsController.getAllEvents( 
-        start=request.args.get("start"),
-        offset=request.args.get("offset")
-    )
-    return jsonify(response)
+    return jsonify([])
 
 
 @eventRoute.route('/<int:idEvent>', methods=['GET'])

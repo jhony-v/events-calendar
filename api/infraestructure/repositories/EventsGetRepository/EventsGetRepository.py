@@ -1,8 +1,7 @@
-from api.application.ports.GetDataPort import *
-from api.infraestructure.adapters.adaptersDatabase.ExecuteDatabaseAdapter import ExecuteDatabaseAdapter
+from mysql.connector import MySQLConnection
 
-class EventsGetRepository(GetDataPort, GetDataBySearchPort, GetDataById):
-    def __init__(self, dataAccess: ExecuteDatabaseAdapter):
+class EventsGetRepository():
+    def __init__(self, dataAccess: MySQLConnection):
         self.dataAccess = dataAccess
 
     def getAll(self, parameters):
@@ -11,14 +10,14 @@ class EventsGetRepository(GetDataPort, GetDataBySearchPort, GetDataById):
             parameters["start"],
             parameters["offset"]
         )
-        return self.dataAccess.fetchAll(statement=sql, parameters=eventsRange)
+        # return self.dataAccess.fetchAll(statement=sql, parameters=eventsRange)
 
     def getAllFiltered(self, parameters):
         sql = ""
         eventFilterParameters = ()
-        return self.dataAccess.fetchAll(statement=sql,parameters=eventFilterParameters)
+        # return self.dataAccess.fetchAll(statement=sql,parameters=eventFilterParameters)
 
     def getById(self, idParameter: int):
         sql = "SELECT * FROM events WHERE id = %s"
         eventId = (idParameter)
-        return self.dataAccess.fetch(statement=sql, parameters=eventId)
+        # return self.dataAccess.fetch(statement=sql, parameters=eventId)

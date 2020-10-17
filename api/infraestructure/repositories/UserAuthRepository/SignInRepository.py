@@ -1,16 +1,23 @@
-from api.application.ports.AccessPort import SignInPort
 from api.domain.entities.User import User
-from api.infraestructure.adapters.adaptersDatabase.ExecuteDatabaseAdapter import ExecuteDatabaseAdapter
+from mysql.connector import MySQLConnection
+from api.infraestructure.transforms.EncryptPassword import EncryptPassword
 
-class SignInRepository(SignInPort):
-    def __init__(self, dataAccess: ExecuteDatabaseAdapter):
+class SignInRepository():
+    def __init__(self, dataAccess: MySQLConnection):
         self.dataAccess = dataAccess
 
     def signIn(self, user: User):
-        sql = "SELECT * FROM user WHERE email = %s AND password = %s"
-        userParams = (
-            user.email,
-            user.password
-        )
-        fetchUserSignIn = self.dataAccess.fetch(statement=sql,parameters=userParams)
-        return fetchUserSignIn if fetchUserSignIn else {}
+        sql = "SELECT * FROM user WHERE email = %s"
+        email = user['email']
+        password = user['password']
+
+        userParams = (email)
+
+        with self.dataAccess.cursor() as cursor:
+            cursor.execute(sql,userParams)
+            data = cursor.fetchone()
+            if(EncryptPassword.validate(password,data['password'])):
+                return data
+            else:
+                return {}
+        self.dataAccess.close()
