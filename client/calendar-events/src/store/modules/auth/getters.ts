@@ -1,5 +1,7 @@
 import { GetterTree } from "vuex";
-import { TypesStore } from './@types/auth-types';
+import { AuthStore } from './auth-types';
 
-const getters: GetterTree<TypesStore.AuthState, TypesStore.RootState> = {};
+const getters: GetterTree<AuthStore.AuthState, AuthStore.RootState> = {
+    isAuthentication : state => !!state.token
+};
 export default getters;

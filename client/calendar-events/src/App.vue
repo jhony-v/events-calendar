@@ -3,30 +3,18 @@
     <router-view></router-view>
   </div>
 </template>
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+import { Action } from 'vuex-class';
 
+@Component({})
+export default class App extends Vue {
+  @Action("authCheckUser",{namespace:"auth"}) authCheckUser !: () => void;
+  created() {
+    this.authCheckUser();
+  }
+}
+</script>
 <style lang="scss">
 @import "./App";
-* {
-  box-sizing: border-box;
-  font-family: Roboto;
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  text-decoration: none;
-}
-
-button,
-textarea,
-summary,
-details,
-input {
-  outline: none;
-  border-width: 0;
-}
-
-body {
-  background: var(--color-bg-page);
-}
 </style>

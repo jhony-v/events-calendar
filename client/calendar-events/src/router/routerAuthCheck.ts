@@ -1,9 +1,10 @@
+import store from '@/store';
 import router from ".";
 
-router.beforeEach((to,from,next) => {
+router.beforeEach((to,_,next) => {
   if(to.matched.some(record => record.meta.auth)) {
-    const logged = true;
-    if(logged) {
+    const isAuthentication = store.getters["auth/isAuthentication"];
+    if(isAuthentication) {
       next();
     }
     else {

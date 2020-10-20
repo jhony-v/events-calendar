@@ -2,18 +2,19 @@ import { Module } from "vuex";
 import getters from "./getters";
 import mutations from "./mutations";
 import actions from "./actions";
-import { TypesStore } from './@types/auth-types';
+import { AuthStore } from './auth-types';
+import AuthServicePersistStorage from '@/infraestructure/services/AuthPersistStorageService';
 
-const state: TypesStore.AuthState = {
-  id: 1,
-  avatar: "avatar",
-  password: "mark2",
-  username: "mark2",
+const state: AuthStore.AuthState = {
+  loading : false,
+  failed : false,
+  user : {},
+  token : AuthServicePersistStorage.getValue(),
 };
 
 const namespaced: boolean = true;
 
-const auth: Module<TypesStore.AuthState, TypesStore.RootState> = {
+const auth: Module<AuthStore.AuthState, AuthStore.RootState> = {
   namespaced,
   state,
   getters,

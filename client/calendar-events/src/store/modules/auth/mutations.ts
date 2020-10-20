@@ -1,17 +1,22 @@
 import { MutationTree } from 'vuex';
-import { TypesStore } from './@types/auth-types';
+import { AuthStore } from './auth-types';
 
-const mutations: MutationTree<TypesStore.AuthState> = {
-    [TypesStore.AuthActions.SIGN_IN](state, payload : TypesStore.AuthLoginVerifiy) {
-      if(payload.username === "mark2" && payload.password === "mark2"){
-      }
-      else {
-        console.log("mal",payload);
-      }
+const mutations: MutationTree<AuthStore.AuthState> = {
+    [AuthStore.AuthActions.LOADING](state) {
+      state.loading = true;
     },
-    [TypesStore.AuthActions.ASK_RECOVER_PASSWORD](state,payload: TypesStore.AuthLoginAskPassword) {
+    
+    [AuthStore.AuthActions.SIGN_IN_COMPLETE](state, {token,user} : AuthStore.AuthState) {
+      state.loading = false;
+      state.failed = false;
+      state.token = token;
+      state.user = user;
+    },
 
-    }
+    [AuthStore.AuthActions.SIGN_IN_FAILED](state) {
+      state.failed = true;
+      state.loading = false;
+    }   
 };
 
 export default mutations;

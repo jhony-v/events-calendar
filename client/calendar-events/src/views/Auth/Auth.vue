@@ -2,7 +2,7 @@
   <div class="auth">
     <div class="auth-form">
         <auth-form-title></auth-form-title>
-        <input-field label="Username or email" class="input" @oninput="username = $event"></input-field>
+        <input-field label="Type your email" class="input" @oninput="username = $event"></input-field>
         <input-field label="Type your password" class="input" @oninput="password = $event"></input-field>
         <router-link class="auth-form__forword" to="/">Forworg password?</router-link>
         <div class="auth-form__button" tabindex="0" @keyup.enter="onAuthSignIn" @click="onAuthSignIn">Sign In</div>
@@ -17,7 +17,7 @@ import { State, Action } from "vuex-class";
 import InputField from "@/components/Packages/FormControls/InputField.vue";
 import AuthOtherOptionsAuth from './AuthOtherOptionsAuth.vue';
 import AuthFormTitle from './AuthFormTitle.vue';
-import { TypesStore } from "@/store/modules/auth/@types/auth-types";
+import { UserNamespace } from '@/infraestructure/entities';
 
 @Component({
   components: {
@@ -27,11 +27,11 @@ import { TypesStore } from "@/store/modules/auth/@types/auth-types";
   },
 })
 export default class Auth extends Vue {
-    private username !: string;
+    private email !: string;
     private password !: string;
-    @Action("authSignIn",{namespace:"auth"}) authSignIn !: (e : TypesStore.AuthLoginVerifiy) => void;
+    @Action("authSignIn",{namespace:"auth"}) authSignIn !: (e : UserNamespace.UserAuth) => void;
     private onAuthSignIn() : void {
-        this.authSignIn({username:this.username,password:this.password});
+        this.authSignIn({email:this.email,password:this.password});
     }
 }
 </script>
