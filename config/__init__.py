@@ -14,3 +14,4 @@ CONFIG_DATABASE_MYSQL = {
     "password": "",
     "database": "events_calendar",
 }
+

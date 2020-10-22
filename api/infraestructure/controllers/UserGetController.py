@@ -1,4 +1,4 @@
-from api.infraestructure.repositories.UserGetRepository.UserGetRepository import UserGetRepository
+from api.infraestructure.repositories.UserRepository.UserGetRepository import UserGetRepository
 from databases import mysqlConnection
 
 

@@ -1,4 +1,4 @@
-from api.infraestructure.repositories.UserAccountManagerRepository.UserDeleteRepository import UserDeleteRepository
+from api.infraestructure.repositories.UserRepository.UserDeleteRepository import UserDeleteRepository
 from databases import mysqlConnection
 
 

@@ -1,4 +1,4 @@
-from api.infraestructure.repositories.EventsGetRepository.EventsGetRepository import EventsGetRepository
+from api.infraestructure.repositories.EventsRepository.EventsGetRepository import EventsGetRepository
 from databases import mysqlConnection
 
 def getAllEvents(start: int, offset: int):
