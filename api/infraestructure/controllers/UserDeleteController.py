@@ -1,7 +1,5 @@
-from api.infraestructure.repositories.UserRepository.UserDeleteRepository import UserDeleteRepository
-from databases import mysqlConnection
-
+from api.infraestructure.services.UserService.UserDelete import UserDeleteService
 
 def deleteUserById(userId):
-    userRepository = UserDeleteRepository(dataAccess=mysqlConnection)
-    return userRepository.deleteUserById(userId)
+    userDeleteService = UserDeleteService()
+    return userDeleteService.deleteUserById(userId)

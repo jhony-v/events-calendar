@@ -1,13 +1,12 @@
-from api.infraestructure.repositories.EventsRepository.EventsGetRepository import EventsGetRepository
-from databases import mysqlConnection
+from api.infraestructure.services.EventsService import EventsGetService
 
 def getAllEvents(start: int, offset: int):
-    getEventsRepository = EventsGetRepository(dataAccess=mysqlConnection)
-    return getEventsRepository.getAll(parameters={
+    getEventsService = EventsGetService()
+    return getEventsService.getAll(parameters={
         "start": start,
         "offset": offset
     })
 
 def getEventById(id: int):
-    getEventsByIdRepository = EventsGetRepository(dataAccess=mysqlConnection)
-    return getEventsByIdRepository.getById(parameters=id)
+    getEventsByIdService = EventsGetService()
+    return getEventsByIdService.getById(parameters=id)

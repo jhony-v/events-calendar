@@ -1,11 +1,9 @@
-from api.infraestructure.repositories.UserRepository.UserGetRepository import UserGetRepository
-from databases import mysqlConnection
-
+from api.infraestructure.services.UserService.UserGet import UserGetService
 
 def getUsers():
-    userGetRepository = UserGetRepository(dataAccess=mysqlConnection)
-    return userGetRepository.getUsers()
+    userGetService = UserGetService()
+    return userGetService.getUsers()
 
 def getOneUserById(id):
-    userGetRepository = UserGetRepository(dataAccess=mysqlConnection)
-    return userGetRepository.getOneUserById(id)
+    userGetService = UserGetService()
+    return userGetService.getOneUserById(id)

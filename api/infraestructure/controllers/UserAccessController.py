@@ -1,20 +1,19 @@
-from api.infraestructure.repositories.AuthRepository.SignUpRepository import SignUpRepository
-from api.infraestructure.repositories.AuthRepository.SignInRepository import SignInRepository
-from databases import mysqlConnection
-from api.domain.entities.User import User
+from api.infraestructure.services.AuthService.UserSignIn import UserSignInService
+from api.infraestructure.services.AuthService.UserSignUp import UserSignUpService
 from api.infraestructure.helpers.JWTAuthenticate import JWTAuthenticate
+from api.domain.entities.User import User
 
 def signUpUser(user):
-    signUpUserRepository = SignUpRepository(dataAccess=mysqlConnection)
-    return signUpUserRepository.signUp(user=user)
+    signUpUserService = UserSignUpService()
+    return signUpUserService.signUp(user=user)
 
 
 def signInUser(user):
     userModel = User()
     userModel.email = user['email']
     userModel.password = user['password']
-    signInUserRepository = SignInRepository(dataAccess=mysqlConnection)
-    data = signInUserRepository.signIn(user=userModel)
+    signInUserService = UserSignInService()
+    data = signInUserService.signIn(user=userModel)
     if data : 
         return {
             'token' : JWTAuthenticate().encode(data)
