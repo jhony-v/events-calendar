@@ -15,6 +15,11 @@ def getAllUsers(userId = 0):
     return Response(200,data);
 
 
+@userRoute.route('/<int:userId>/events', methods=['GET'])
+def getEventsByUserId( userId ) :
+    data = userGetController.getEventsByUserId(userId=userId)
+    return Response(200,data)
+
 @userRoute.route('/reset-password', methods = ['POST'])
 def resetUserPassword():
     request_json = request.get_json()

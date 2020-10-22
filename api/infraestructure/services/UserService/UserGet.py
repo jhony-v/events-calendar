@@ -11,5 +11,19 @@ class UserGetService(object):
         return self.client.fetchAll(sql)
 
     def getOneUserById(self, userId):
-        sql = 'SELECT * FROM user WHERE userId = %s'
+        sql = 'SELECT userId,username,userDescription,profileImage,fullName,email,backgroundImage FROM user WHERE userId = %s'
         return self.client.fetchOne(sql, (userId,))
+
+    def getEventsByUserId(self, userId):
+        sql = "select * from `Event` where createdByUserId = %s"
+        return self.client.fetchAll(sql, (userId,))
+    
+    def getEventsAndCreatorByUserId(self,userId):
+        user = self.getOneUserById(userId)
+        events = self.getEventsByUserId(userId)
+        return {
+            'user': {
+                **user,
+                'events': events
+            },
+        }

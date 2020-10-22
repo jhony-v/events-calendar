@@ -15,3 +15,4 @@ CONFIG_DATABASE_MYSQL = {
     "database": "events_calendar",
 }
 
+UPLOAD_FOLDER = '/files'

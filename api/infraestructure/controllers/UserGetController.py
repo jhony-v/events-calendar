@@ -1,9 +1,10 @@
 from api.infraestructure.services.UserService.UserGet import UserGetService
 
 def getUsers():
-    userGetService = UserGetService()
-    return userGetService.getUsers()
+    return UserGetService().getUsers()
 
-def getOneUserById(id):
-    userGetService = UserGetService()
-    return userGetService.getOneUserById(id)
+def getOneUserById(userId):
+    return UserGetService().getOneUserById(userId)
+
+def getEventsByUserId(userId):
+    return UserGetService().getEventsAndCreatorByUserId(userId)

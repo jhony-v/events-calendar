@@ -13,16 +13,18 @@ class EventsGetService(object):
         )
         return self.client.fetchAll(sql, eventsRange)
 
-    def getAllEventsFiltered(self, parameters):
-        sql = ""
-        eventFilterParameters = ()
-        pass
-        # return self.dataAccess.fetchAll(statement=sql,parameters=eventFilterParameters)
+    def getAllEventsFiltered(self, filters : dict):
+        filterValues = {}
+        query = "SELECT * FROM Event WHERE "
+        i = 1
+        for key, value in filters.items():
+            query += f"{key} LIKE %({key})s"
+            filterValues[key] = "%{}%".format(value)
+            if i < len(filters):
+                query += ' AND '
+            i += 1
+        return self.client.fetchAll(query,filterValues)
 
     def getEventById(self, eventId: int):
-        sql = "SELECT * FROM Event WHERE id = %s"
+        sql = "SELECT * FROM Event WHERE eventId = %s"
         return self.client.fetchOne(sql, (eventId,))
-
-    def getEventByUserId(self, parameterId: int):
-        sql = "select * from `Event` where createdByUserId = %s"
-        return self.client.fetchAll(sql, (parameterId,))

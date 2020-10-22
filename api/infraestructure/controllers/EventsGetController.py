@@ -1,12 +1,17 @@
-from api.infraestructure.services.EventsService import EventsGetService
+from api.infraestructure.services.EventsService.EventsGet import EventsGetService
 
 def getAllEvents(start: int, offset: int):
     getEventsService = EventsGetService()
-    return getEventsService.getAll(parameters={
-        "start": start,
-        "offset": offset
+    return getEventsService.getAllEvents(limits={
+        "start": int(start),
+        "offset": int(offset)
     })
+
 
 def getEventById(id: int):
     getEventsByIdService = EventsGetService()
-    return getEventsByIdService.getById(parameters=id)
+    return getEventsByIdService.getEventById(eventId=id)
+
+
+def getAllEventsFiltered( filters : dict ):
+    return EventsGetService().getAllEventsFiltered(filters=filters)
