@@ -1,36 +1,45 @@
 from flask import Blueprint, jsonify, request
-import api.infraestructure.restControllers.EventsGetController as eventsController
+from utils import Response
+import api.infraestructure.controllers.EventsGetController as eventGetController
+import api.infraestructure.controllers.EventsCategoryGetController as eventsCategoryGetController
+import json
 eventRoute = Blueprint('event', __name__)
 
 @eventRoute.route('/', methods=['GET'])
-def getAllEvents():
-    response = eventsController.getAllEvents( 
-        start=request.args.get("start"),
-        offset=request.args.get("offset")
-    )
-    return jsonify(response)
+@eventRoute.route('/<int:eventId>', methods=['GET'])
+def getAllEvents(eventId  = None):
+    if eventId == None:
+        start = request.args.get("start") if "start" in request.args else 0
+        offset = request.args.get("offset") if "offset" in request.args else 4
+        return Response(200,eventGetController.getAllEvents(start,offset))
+    return Response(200,eventGetController.getEventById(eventId))
 
+@eventRoute.route('/search', methods=['GET'])
+def searchAllEvents():
+    filters = dict(request.args)
+    data = eventGetController.getAllEventsFiltered(filters=filters)
+    return Response(200,data)
 
-@eventRoute.route('/<int:idEvent>', methods=['GET'])
-def getAllEventsById(idEvent):
-    return jsonify([])
+@eventRoute.route('/', method=['POST'])
+def createNewEvent():
+    return Response(200,{})
 
+@eventRoute.route('/categories', methods=['GET'])
+def getAllEventCategories():
+    data = eventsCategoryGetController.getAllCategories()
+    return Response(200,data)
 
-@eventRoute.route('/<int:idEvent>/users', methods=['GET'])
-def getAllUsersByEvent(idEvent):
-    return jsonify([])
-
-
-@eventRoute.route('/<int:idEvent>/comments', methods=['GET'])
-def getAllCommentsByEvent(idEvent):
-    return jsonify([])
-
+@eventRoute.route('/<int:eventId>/comments', methods=['GET'])
+def getAllCommentsByEvent(eventId):
+    return Response(200,{})
 
 @eventRoute.route('/', methods=['POST'])
 def createNewEvent():
-    return jsonify([])
+    request_json = request.get_json()
+    eventImage = request.files['eventImage']
+    return Response(200,{})
 
 
-@eventRoute.route('/<int:idEvent>', methods=['DELETE'])
+@eventRoute.route('/<int:eventId>', methods=['DELETE'])
 def deleteEvent(idEvent):
-    return jsonify([])
+    return Response(200,{})

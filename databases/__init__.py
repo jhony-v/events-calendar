@@ -1,4 +1,5 @@
-import pymysql.cursors
 from config import CONFIG_DATABASE_MYSQL
+import mysql.connector 
 
-mysqlConnection = pymysql.Connection(**CONFIG_DATABASE_MYSQL)
+mysqlConnection = mysql.connector.connect(**CONFIG_DATABASE_MYSQL)
+
