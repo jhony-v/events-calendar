@@ -20,10 +20,10 @@ import AuthFormTitle from './AuthFormTitle.vue';
 import { UserNamespace } from '@/infraestructure/entities';
 
 @Component({
-  components: {
+    components: {
     InputField,
     AuthOtherOptionsAuth,
-    AuthFormTitle
+    AuthFormTitle,
   },
 })
 export default class Auth extends Vue {
