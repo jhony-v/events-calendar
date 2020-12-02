@@ -4,6 +4,8 @@ const linkRoutes = {
     children: {
       default: "/",
       newEvent: "/new-event",
+      workers : "/workers",
+      allEvents : "/all-events",
     },
   },
   about: {

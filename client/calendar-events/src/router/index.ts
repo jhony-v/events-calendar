@@ -19,12 +19,21 @@ const routes: Array<RouteConfig> = [
           {
             name: "Dashboard",
             path: linkRoutes.home.children.default,
-            component: () => import("../views/Home/HomeScenes/Default/HomeDefaultScene.vue"),
+            component: () => import("../views/Home/HomeScenes/RecentEvents/RecentEventsScene.vue"),
           },
           {
             path : linkRoutes.home.children.newEvent,
-            component :() => import("../views/Home/HomeScenes/NewEventDefine/HomeNewEventDefineScene.vue")
+            component :() => import("../views/Home/HomeScenes/NewEvent/NewEventScene.vue")
+          },
+          {
+            path : linkRoutes.home.children.workers,
+            component :() => import("../views/Home/HomeScenes/Workers/WorkersScene.vue")
+          },
+          {
+            path : linkRoutes.home.children.allEvents,
+            component :() => import("../views/Home/HomeScenes/AllEvents/AllEventsScene.vue")
           }
+
         ],
       },
       {

@@ -13,8 +13,8 @@
 <script>
 import {LoadingSpinner} from "@/components/Common/Loaders";
 import NavigatorHeaderToolbar from "@/components/Layouts/NavigatorHeaderToolbar/NavigatorHeaderToolbar.vue";
-import HomeAsidePagelet from "./HomeAsidePagelet.vue";
-import HomeMainDrawerPagelet from "./HomeMainDrawerPagelet.vue";
+import HomeAsidePagelet from "./HomeComponents/HomeAsidePagelet.vue";
+import HomeMainDrawerPagelet from "./HomeComponents/HomeMainDrawerPagelet.vue";
 
 export default {
   components: {

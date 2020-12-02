@@ -30,11 +30,11 @@ const actions: ActionTree<AuthStore.AuthState, AuthStore.RootState> = {
         commit(AuthStore.AuthActions.SIGN_IN_COMPLETE,user);
       }
       else {
-        router.replace("/sign-in");
+        // router.replace("/sign-in");
       }
     }
     catch(e) {
-      router.replace("/sign-in");
+      // router.replace("/sign-in");
     }
   },
   
