@@ -37,11 +37,8 @@ export default class WorkersScene extends Vue {
 
 <style lang="scss">
 
-$m : 30px;
-
 .workers {
-  margin-left: $m;
-  margin-right: $m;
+  margin: 0 30px;
 
   &__main-title {
     flex: none;

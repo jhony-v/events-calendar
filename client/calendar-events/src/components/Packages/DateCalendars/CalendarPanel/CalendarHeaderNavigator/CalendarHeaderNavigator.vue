@@ -26,6 +26,6 @@ export default class CalendarHeaderNavigator extends Vue {
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5em 10%;
+    padding: 0 5%;
 }
 </style>
