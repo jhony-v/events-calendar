@@ -1,6 +1,6 @@
 <template>
   <div class="auth-form__options">
-    <div class="auth-form__options__google">
+    <div class="auth-form__options__google" role="button" @click="signInWithGoogle">
       <img
         src="https://image.flaticon.com/teams/slug/google.jpg"
         width="30px"
@@ -10,8 +10,17 @@
   </div>
 </template>
 
-<script>
-export default {};
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
+
+@Component({
+
+})
+export default class AuthOtherOptionsAuth extends Vue { 
+  private signInWithGoogle =() => {
+
+  }
+};
 </script>
 
 <style lang="scss" scoped>

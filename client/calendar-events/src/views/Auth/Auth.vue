@@ -3,7 +3,7 @@
     <div class="auth-form">
         <auth-form-title></auth-form-title>
         <input-field label="Type your email" class="input" @oninput="username = $event"></input-field>
-        <input-field label="Type your password" class="input" @oninput="password = $event"></input-field>
+        <input-field type="password" label="Type your password" class="input" @oninput="password = $event"></input-field>
         <router-link class="auth-form__forword" to="/">Forworg password?</router-link>
         <div class="auth-form__button" tabindex="0" @keyup.enter="onAuthSignIn" @click="onAuthSignIn">Sign In</div>
         <auth-other-options-auth></auth-other-options-auth>

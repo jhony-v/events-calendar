@@ -1,7 +1,7 @@
 <template>
   <div class="field">
     <label class="field__label">{{label}}</label>
-    <input class="field__input" spellcheck="false" :ref="input" @input="onChangeInput" />
+    <input class="field__input" spellcheck="false" :ref="input" @input="onChangeInput" :type="type" />
   </div>
 </template>
 
@@ -11,6 +11,7 @@ import { Vue, Component, Prop, Emit, Ref } from "vue-property-decorator";
 @Component({})
 export default class InputField extends Vue {
   @Prop() label !: string;
+  @Prop() type !: string;
   @Ref() input !: HTMLInputElement;
   onChangeInput = (e: any) => this.$emit("oninput",e.target.value);
 }
