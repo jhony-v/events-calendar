@@ -1,13 +1,15 @@
 <template>
   <div class="new-event">
     <div class="new-event__header">
-      <text-label :weight="true" fontSizeText="big"
-        >Create new event</text-label
-      >
+      <text-label :weight="true" fontSizeText="big">Create new event</text-label>
     </div>
     <div class="new-event__body">
       <div class="new-event__form">
-        <div class="form__controls"></div>
+        <div class="form__controls">
+          <input-field-outline type="input" label="Nombre del proyecto" placeholder="Ingresar nombre del proyecto"></input-field-outline>
+          <input-field-outline type="textarea" label="Descripción del proyecto" rows="5" placeholder="Ingresar descripción del proyecto"></input-field-outline>
+          <input-field-outline type="input" label="Contraseña para proyecto" placeholder="Ingresar contraseña" :isPassword="true"></input-field-outline>
+        </div>
         <div class="form__date-picker">
           <calendar-panel-container> </calendar-panel-container>
         </div>
@@ -24,6 +26,7 @@
 import { ButtonAppPrimary, ButtonDefault } from "@/components/Common/Buttons";
 import { TextLabel } from "@/components/Common/TextLabels";
 import CalendarPanelContainer from "@/components/Packages/DateCalendars/CalendarPanel/CalendarPanel.vue";
+import InputFieldOutline from "@/components/Packages/FormControls/InputFieldOutline.vue";
 import { Vue, Component } from "vue-property-decorator";
 @Component({
   components: {
@@ -31,6 +34,7 @@ import { Vue, Component } from "vue-property-decorator";
     TextLabel,
     ButtonAppPrimary,
     ButtonDefault,
+    InputFieldOutline,
   },
 })
 export default class NewEventScene extends Vue {}
@@ -50,10 +54,12 @@ $form: form;
       flex: none;
       width: 360px;
       padding-right: 90px;
+      > * {
+        margin-bottom: 25px;
+      }
     }
     &__date-picker {
       flex-grow: 1;
-      background: red;
     }
     &__options {
       width: 100%;

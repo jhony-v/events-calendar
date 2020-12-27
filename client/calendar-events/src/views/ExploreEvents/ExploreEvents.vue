@@ -1,19 +1,19 @@
 <template>
   <div class="explore-events">
     
-    <section-classification title-classification="Categories">
+    <section-classification title-classification="Categorias">
       <flat-list-scrollable-direction-controller :isHorizontal="true">
           <button-default 
             v-for="(value,key) in categoriesEvents" 
             :key="key"
             :style="{marginRight:'30px'}"
           >
-            categorie
+           Categoria {{key}} 
           </button-default>
       </flat-list-scrollable-direction-controller>
     </section-classification>
 
-    <section-classification title-classification="Most relevants events">
+    <section-classification title-classification="Principales proyectos">
       <flat-list-scrollable-direction-controller :isHorizontal="true">
         <article 
           v-for="(value,key) in mostRelevantEvents" 

@@ -24,19 +24,19 @@ export default class HomeDefaultScene extends Vue {
     this.data = [
       {
         to: linkRoutes.home.children.default,
-        text: "recent events",
+        text: "recientes",
       },
       {
         to: linkRoutes.home.children.newEvent,
-        text: "new event",
+        text: "agregar proyecto",
       },
       {
         to: linkRoutes.home.children.workers,
-        text: "workers",
+        text: "trabajadores",
       },
       {
         to: linkRoutes.home.children.allEvents,
-        text: "all events",
+        text: "proyectos",
       },
     ];
   }

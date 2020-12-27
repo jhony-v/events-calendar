@@ -11,7 +11,7 @@
     </div>
     <div class="worker__total-jobs">
       <text-label :weight="true" class="total">{{totalJobs}}</text-label>
-      <text-label variant="smooth">Project working</text-label>
+      <text-label variant="smooth">Projectos trabajando</text-label>
     </div>
     <div class="worker__options">
       <button-default>{{textActionButton}}</button-default>
@@ -59,13 +59,13 @@ export default class RowProjectWorker extends Vue {
     }
   }
   &__total-jobs {
-    margin: auto;
+    margin-left: auto;
+    margin-right:20px;
     .total {
       margin-right: 10px;
     }
   }
   &__options {
-    margin-left: auto;
     .button {
       margin-left: 10px;
     }

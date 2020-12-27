@@ -8,8 +8,8 @@
     </div>
     <chip-avatar-user-informational
       image="https://cdn.pixabay.com/photo/2018/12/01/00/10/blue-hour-3848856__340.jpg"
-      username="Mark Lenderset Tormk"
-      detail="userask@gmail.com"
+      username="Jhony Vega"
+      detail="jhony.vega@gmail.com"
       class="navigator__user"
     ></chip-avatar-user-informational>
 

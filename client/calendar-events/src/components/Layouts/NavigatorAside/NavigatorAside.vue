@@ -27,22 +27,22 @@ const dataListNavLinks: INavLink[] = [
   {
     link: linkRoutes.home.default,
     icon: "home",
-    text: "home",
+    text: "inicio",
   },
   {
     link: linkRoutes.about.default,
     icon: "people",
-    text: "about me",
+    text: "acerca de mí",
   },
   {
     link: linkRoutes.explore.default,
     icon: "explore",
-    text: "explore",
+    text: "explorar",
   },
   {
     link: linkRoutes.settings.default,
     icon: "settings",
-    text: "settings",
+    text: "configuración",
   },
 ];
 
