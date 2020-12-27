@@ -1,14 +1,15 @@
 import { Module } from "vuex";
 import actions from './actions'
+import { ExploreEventsStore } from "./exploreEvents-types";
 import mutations from './mutations'
-import { WorkersStore } from "./exploreEvents-types";
 
-const workers : Module<WorkersStore.WorkersState,WorkersStore.RootState> = {
+const workers : Module<ExploreEventsStore.ExploreEventsState,ExploreEventsStore.RootState> = {
     namespaced : true,
     state : {
-        failed : false,
+        allEvents : [],
+        categories : [],
+        outstandingsEvents : [],
         loading : true,
-        workers : []
     },
     mutations,
     actions,

@@ -4,7 +4,7 @@ import router from ".";
 router.beforeEach((to,_,next) => {
   if(to.matched.some(record => record.meta.auth)) {
     const isAuthentication = store.getters["auth/isAuthentication"];
-    if(isAuthentication) {
+    if(true) {
       next();
     }
     else {

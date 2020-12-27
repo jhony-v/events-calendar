@@ -1,19 +1,32 @@
-export namespace WorkersStore {
+export namespace ExploreEventsStore {
   export interface RootState {}
-  export interface Worker {
-    userId: number;
-    avatar: string;
-    fullName: string;
-    totalJobs: number;
-    jobs: any[];
+
+  export interface Categories {
+    categoryId: number;
+    category: string;
   }
-  export interface WorkersState {
+  export interface Event {
+    eventId: number;
+    title: string;
+    createdDate: string;
+    finishedDate: string;
+    image: string;
+    creator: {
+      userId: number;
+      fullName: string;
+      avatar: string;
+      email: string;
+    };
+  }
+
+  export interface ExploreEventsState {
+    categories: Categories[];
+    outstandingsEvents: Event[];
+    allEvents: Event[];
     loading: boolean;
-    failed: boolean;
-    workers: Worker[];
   }
-  export enum WorkerActions {
-    FETCH_WORKERS = "FETCH_WORKERS",
+  export enum ExploreActions {
+    FETCH_EVENTS = "FETCH_EVENTS",
     LOADING = "LOADING",
   }
 }

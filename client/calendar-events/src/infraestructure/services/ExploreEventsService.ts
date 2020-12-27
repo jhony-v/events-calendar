@@ -1,6 +1,6 @@
 import { API } from "../config/api";
 
-export default class exploreEventsService {
+export default class ExploreEventsService {
   getExploreCategories = async () => {
     try {
       const data: any = [
